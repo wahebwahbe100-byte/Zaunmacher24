@@ -961,6 +961,30 @@
       border: 1px solid var(--line);
     }
     .gallery-item.big { grid-column: span 2; grid-row: span 2; }
+
+    .gallery-item .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.01);
+      transition: transform .45s ease;
+    }
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.06);
+    }
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 52%, rgba(0,0,0,.18) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .gallery-label {
+      z-index: 2;
+    }
+
     .gallery-item.dark { background: repeating-linear-gradient(0deg, #474d56 0 28px, #30343b 28px 32px); }
     .gallery-item.warm { background: repeating-linear-gradient(0deg, #c5b8a6 0 28px, #a99d8e 28px 32px); }
     .gallery-label {
@@ -4076,11 +4100,26 @@
           <p>Beispiele für typische Einsatzbereiche im privaten und gewerblichen Außenbereich.</p>
         </div>
         <div class="gallery">
-          <div class="gallery-item big"><div class="gallery-label">Moderner Sichtschutz<span>Betonpfeiler mit Metallfeldern</span></div></div>
-          <div class="gallery-item dark"><div class="gallery-label">Graphitfarbene Mauer<span>Ruhige, klare Optik</span></div></div>
-          <div class="gallery-item warm"><div class="gallery-label">Gartenmauer<span>Struktur und Höhenversatz</span></div></div>
-          <div class="gallery-item"><div class="gallery-label">Einfahrt<span>Zaun, Tor und Pforte</span></div></div>
-          <div class="gallery-item dark"><div class="gallery-label">Split-Oberfläche<span>Naturstein-Charakter</span></div></div>
+          <div class="gallery-item big">
+            <img class="gallery-img" src="images/idee-sichtschutz.png" alt="Moderner Sichtschutz mit Betonpfeilern und anthrazitfarbenen Metallfeldern" loading="lazy">
+            <div class="gallery-label">Moderner Sichtschutz<span>Betonpfeiler mit Metallfeldern</span></div>
+          </div>
+          <div class="gallery-item dark">
+            <img class="gallery-img" src="images/idee-graphit-mauer.png" alt="Graphitfarbene Betonmauer mit ruhiger klarer Optik" loading="lazy">
+            <div class="gallery-label">Graphitfarbene Mauer<span>Ruhige, klare Optik</span></div>
+          </div>
+          <div class="gallery-item warm">
+            <img class="gallery-img" src="images/idee-gartenmauer.png" alt="Moderne Gartenmauer aus Betonsteinen mit Pflanzen" loading="lazy">
+            <div class="gallery-label">Gartenmauer<span>Struktur und Höhenversatz</span></div>
+          </div>
+          <div class="gallery-item">
+            <img class="gallery-img" src="images/idee-einfahrt.png" alt="Einfahrt mit Betonpfeilern, Zaun und moderner Pforte" loading="lazy">
+            <div class="gallery-label">Einfahrt<span>Zaun, Tor und Pforte</span></div>
+          </div>
+          <div class="gallery-item dark">
+            <img class="gallery-img" src="images/idee-split-oberflaeche.png" alt="Split-Oberfläche mit Naturstein-Charakter als Detail einer Betonmauer" loading="lazy">
+            <div class="gallery-label">Split-Oberfläche<span>Naturstein-Charakter</span></div>
+          </div>
         </div>
       </div>
     </section>
