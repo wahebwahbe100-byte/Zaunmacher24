@@ -2384,6 +2384,199 @@
       }
     }
 
+  
+
+    /* ============================================================
+       FINAL REQUEST FIX: same wide logo style as provided example
+       Large gate icon + zaunmacher24 wordmark in one clean lockup.
+       ============================================================ */
+    header .container.nav {
+      width: min(1460px, calc(100% - 48px)) !important;
+      min-height: 108px !important;
+      grid-template-columns: auto 1fr auto !important;
+      gap: 28px !important;
+    }
+
+    header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 26px !important;
+      min-width: 0 !important;
+      height: 108px !important;
+      flex-shrink: 0 !important;
+      transform: none !important;
+    }
+
+    header .logo img.logo-mark,
+    header .logo .logo-mark {
+      width: 260px !important;
+      height: 84px !important;
+      flex: 0 0 260px !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    header .logo .logo-mark::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    header .logo .logo-text,
+    header .logo > span:not(.logo-mark) {
+      display: inline-block !important;
+      color: #2f3542 !important;
+      font-size: 44px !important;
+      font-weight: 950 !important;
+      line-height: .92 !important;
+      letter-spacing: -.075em !important;
+      white-space: nowrap !important;
+    }
+
+    header .logo .logo-text span,
+    header .logo > span:not(.logo-mark) span {
+      color: #ffcc00 !important;
+    }
+
+    header .menu {
+      gap: 20px !important;
+      font-size: 15px !important;
+      justify-self: center !important;
+    }
+
+    header .nav-actions {
+      gap: 12px !important;
+    }
+
+    header .btn {
+      padding: 14px 20px !important;
+      font-size: 15px !important;
+    }
+
+    .hero-kaiser .hero-slide-inner {
+      padding-top: 160px !important;
+    }
+
+    footer .logo {
+      gap: 18px !important;
+    }
+
+    footer .logo img.logo-mark,
+    footer .logo .logo-mark {
+      width: 180px !important;
+      height: 64px !important;
+      flex: 0 0 180px !important;
+      object-fit: contain !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+    }
+
+    footer .logo .logo-text,
+    footer .logo > span:not(.logo-mark) {
+      font-size: 34px !important;
+      color: #fff !important;
+      font-weight: 950 !important;
+      letter-spacing: -.065em !important;
+    }
+
+    footer .logo .logo-text span,
+    footer .logo > span:not(.logo-mark) span {
+      color: #ffcc00 !important;
+    }
+
+    @media (max-width: 1320px) {
+      header .container.nav {
+        gap: 20px !important;
+        width: min(1280px, calc(100% - 32px)) !important;
+      }
+      header .logo { gap: 18px !important; }
+      header .logo img.logo-mark,
+      header .logo .logo-mark {
+        width: 205px !important;
+        height: 72px !important;
+        flex-basis: 205px !important;
+      }
+      header .logo .logo-text,
+      header .logo > span:not(.logo-mark) {
+        font-size: 38px !important;
+      }
+      header .menu {
+        gap: 14px !important;
+        font-size: 14px !important;
+      }
+      header .btn {
+        padding: 12px 16px !important;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      header .container.nav {
+        display: flex !important;
+        min-height: 88px !important;
+        justify-content: space-between !important;
+      }
+      header .logo {
+        height: 88px !important;
+        gap: 14px !important;
+      }
+      header .logo img.logo-mark,
+      header .logo .logo-mark {
+        width: 170px !important;
+        height: 60px !important;
+        flex-basis: 170px !important;
+      }
+      header .logo .logo-text,
+      header .logo > span:not(.logo-mark) {
+        font-size: 34px !important;
+      }
+      header .menu,
+      header .nav-actions {
+        display: none !important;
+      }
+      header .mobile-toggle {
+        display: block !important;
+      }
+      header .menu.open {
+        display: flex !important;
+        top: 88px !important;
+      }
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 132px !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header .container.nav {
+        min-height: 76px !important;
+        width: calc(100% - 24px) !important;
+      }
+      header .logo {
+        height: 76px !important;
+        gap: 9px !important;
+      }
+      header .logo img.logo-mark,
+      header .logo .logo-mark {
+        width: 104px !important;
+        height: 42px !important;
+        flex-basis: 104px !important;
+      }
+      header .logo .logo-text,
+      header .logo > span:not(.logo-mark) {
+        font-size: 25px !important;
+      }
+      header .menu.open {
+        top: 76px !important;
+      }
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 116px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
