@@ -2590,6 +2590,126 @@
         font-size: 19px !important;
       }
     }
+
+
+    /* ============================================================
+       FINAL LOGO ALIGNMENT FIX
+       Keep the gate image and zaunmacher24 text directly beside
+       each other as one logo unit, without a big empty gap.
+       ============================================================ */
+    header .container.nav {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      min-height: 92px !important;
+    }
+
+    header .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 10px !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      height: 92px !important;
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    header .logo img.logo-mark,
+    header .logo .logo-mark {
+      width: 178px !important;
+      height: 62px !important;
+      flex: 0 0 178px !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      box-shadow: none !important;
+    }
+
+    header .logo .logo-text,
+    header .logo > span:not(.logo-mark) {
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #2f3542 !important;
+      font-size: 26px !important;
+      font-weight: 950 !important;
+      line-height: 1 !important;
+      letter-spacing: -.045em !important;
+      white-space: nowrap !important;
+      flex: 0 0 auto !important;
+      transform: translateY(1px) !important;
+    }
+
+    header .logo .logo-text span,
+    header .logo > span:not(.logo-mark) span {
+      color: #ffcc00 !important;
+    }
+
+    @media (max-width: 1080px) {
+      header .container.nav {
+        min-height: 82px !important;
+      }
+      header .logo {
+        height: 82px !important;
+        gap: 8px !important;
+      }
+      header .logo img.logo-mark,
+      header .logo .logo-mark {
+        width: 138px !important;
+        height: 50px !important;
+        flex-basis: 138px !important;
+      }
+      header .logo .logo-text,
+      header .logo > span:not(.logo-mark) {
+        font-size: 23px !important;
+      }
+      header .menu.open {
+        top: 82px !important;
+      }
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 126px !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header .container.nav {
+        width: calc(100% - 22px) !important;
+        min-height: 72px !important;
+        gap: 10px !important;
+      }
+      header .logo {
+        height: 72px !important;
+        gap: 6px !important;
+      }
+      header .logo img.logo-mark,
+      header .logo .logo-mark {
+        width: 92px !important;
+        height: 38px !important;
+        flex-basis: 92px !important;
+      }
+      header .logo .logo-text,
+      header .logo > span:not(.logo-mark) {
+        font-size: 19px !important;
+        letter-spacing: -.04em !important;
+      }
+      header .menu.open {
+        top: 72px !important;
+      }
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 104px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
