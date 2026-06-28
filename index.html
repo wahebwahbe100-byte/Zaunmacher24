@@ -2577,7 +2577,20 @@
       }
     }
 
-  </style>
+  
+
+    /* Logo wordmark size tweak: slightly smaller zaunmacher24 text */
+    header .logo > span:not(.logo-mark) {
+      font-size: 23px !important;
+      letter-spacing: -.045em !important;
+    }
+
+    @media (max-width: 760px) {
+      header .logo > span:not(.logo-mark) {
+        font-size: 19px !important;
+      }
+    }
+</style>
 </head>
 <body>
   <div class="topbar">
