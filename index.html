@@ -3108,6 +3108,159 @@
     }
 
 
+
+
+    /* ============================================================
+       FIX VORTEILE THUMBNAILS: clear real mini photos, not tiny icons
+       ============================================================ */
+    #vorteile .benefits {
+      gap: 22px !important;
+      align-items: stretch;
+    }
+
+    #vorteile .benefit {
+      padding: 22px !important;
+      border-radius: 28px !important;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: 0 18px 50px rgba(17,24,39,.07) !important;
+    }
+
+    #vorteile .benefit-thumb {
+      width: 100% !important;
+      height: 126px !important;
+      margin: 0 0 22px !important;
+      border-radius: 20px !important;
+      display: block !important;
+      background: #f6f7f9 !important;
+      border: 1px solid #e4e7ec !important;
+      overflow: hidden !important;
+      box-shadow: 0 12px 28px rgba(17,24,39,.08) !important;
+    }
+
+    #vorteile .benefit-thumb img {
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      border-radius: 19px !important;
+      image-rendering: auto !important;
+      filter: none !important;
+      transform: translateZ(0);
+    }
+
+    #vorteile .benefit h3 {
+      margin-top: 0 !important;
+      margin-bottom: 12px !important;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    #vorteile .benefit p {
+      font-size: 16.5px;
+      line-height: 1.62;
+    }
+
+    @media (max-width: 980px) {
+      #vorteile .benefit-thumb { height: 160px !important; }
+      #vorteile .benefit { min-height: 360px; }
+    }
+
+    @media (max-width: 680px) {
+      #vorteile .benefit-thumb { height: 180px !important; }
+      #vorteile .benefit { min-height: auto; }
+    }
+
+  
+    /* ============================================================
+       FINAL VORTEILE THUMBNAILS: small thumbnails, but clear
+       ============================================================ */
+    #vorteile .benefits {
+      gap: 22px !important;
+      align-items: stretch !important;
+    }
+
+    #vorteile .benefit {
+      padding: 32px !important;
+      border-radius: 28px !important;
+      min-height: 294px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      box-shadow: 0 18px 50px rgba(17,24,39,.06) !important;
+    }
+
+    #vorteile .benefit-thumb {
+      width: 74px !important;
+      height: 74px !important;
+      min-width: 74px !important;
+      min-height: 74px !important;
+      margin: 0 0 28px !important;
+      padding: 7px !important;
+      border-radius: 22px !important;
+      display: grid !important;
+      place-items: center !important;
+      background: #fff4c7 !important;
+      border: 1px solid #ffcf33 !important;
+      overflow: hidden !important;
+      box-shadow: none !important;
+    }
+
+    #vorteile .benefit-thumb img {
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      border-radius: 15px !important;
+      image-rendering: auto !important;
+      filter: none !important;
+      transform: none !important;
+    }
+
+    #vorteile .benefit h3 {
+      margin-top: 0 !important;
+      margin-bottom: 12px !important;
+      font-size: 22px !important;
+      line-height: 1.22 !important;
+      letter-spacing: -.03em !important;
+    }
+
+    #vorteile .benefit p {
+      font-size: 17px !important;
+      line-height: 1.58 !important;
+    }
+
+    @media (max-width: 980px) {
+      #vorteile .benefit-thumb {
+        width: 78px !important;
+        height: 78px !important;
+        min-width: 78px !important;
+        min-height: 78px !important;
+      }
+      #vorteile .benefit { min-height: 310px !important; }
+    }
+
+    @media (max-width: 680px) {
+      #vorteile .benefit-thumb {
+        width: 82px !important;
+        height: 82px !important;
+        min-width: 82px !important;
+        min-height: 82px !important;
+      }
+      #vorteile .benefit { min-height: auto !important; }
+    }
+
+  
+/* PNG thumbnail names: small but clear images */
+#vorteile .benefit-thumb img {
+  image-rendering: auto !important;
+  filter: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -3230,28 +3383,28 @@
         <div class="benefits">
           <article class="benefit">
             <figure class="benefit-thumb">
-              <img src="images/vorteil-1.png" alt="Stabile Betonsteinlösung im Außenbereich" loading="lazy" onerror="this.style.display='none';">
+              <img src="vorteile_images/vorteil-1.png" alt="Stabile Betonsteinlösung im Außenbereich" loading="lazy">
             </figure>
             <h3>Stabil im Außenbereich</h3>
             <p>Massive Zaun- und Mauerelemente für langlebige Lösungen rund um Grundstück, Garten und Einfahrt.</p>
           </article>
           <article class="benefit">
             <figure class="benefit-thumb">
-              <img src="images/vorteil-2.png" alt="Moderne Gestaltung mit Betonsteinen" loading="lazy" onerror="this.style.display='none';">
+              <img src="vorteile_images/vorteil-2.png" alt="Moderne Gestaltung mit Betonsteinen" loading="lazy">
             </figure>
             <h3>Moderne Gestaltung</h3>
             <p>Klare Linien, verschiedene Oberflächen und Farben für eine moderne und gepflegte Außenanlage.</p>
           </article>
           <article class="benefit">
             <figure class="benefit-thumb">
-              <img src="images/vorteil-3.png" alt="Betonsteine kombiniert mit Toren und Metallfeldern" loading="lazy" onerror="this.style.display='none';">
+              <img src="vorteile_images/vorteil-3.png" alt="Betonsteine kombiniert mit Toren und Metallfeldern" loading="lazy">
             </figure>
             <h3>Gut kombinierbar</h3>
             <p>Betonsteine lassen sich problemlos mit Toren, Pforten, Metallfeldern, Abdeckungen, Fundamenten und weiterem Zubehör kombinieren.</p>
           </article>
           <article class="benefit">
             <figure class="benefit-thumb">
-              <img src="images/vorteil-4.png" alt="Individuelle Projektanfrage für Betonsteine" loading="lazy" onerror="this.style.display='none';">
+              <img src="vorteile_images/vorteil-4.png" alt="Individuelle Projektanfrage für Betonsteine" loading="lazy">
             </figure>
             <h3>Individuelle Anfrage</h3>
             <p>Menge, Lieferung und Ausführung werden projektbezogen geprüft – passend zu Ihrem Vorhaben.</p>
