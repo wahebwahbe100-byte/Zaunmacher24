@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zaunmacher24 – Betonsteine, Zaunsteine, Mauersteine und Fundamente für moderne Zaun- und Gartenprojekte. Beratung, Lieferung und Anfrage." />
+  <meta name="keywords" content="Betonsteine, Zaunsteine, Mauersteine, Sichtschutz, Gartenmauer, Fundamente, Zaunbau, Betonmauer" />
+  <title>Zaunmacher24 | Betonsteine & Zaunsteine</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-soft: #171a21;
+      --bg-card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --light: #f5f6f8;
+      --line: #e5e7eb;
+      --dark-line: rgba(255,255,255,.13);
+      --brand: #e31f26;
+      --brand-dark: #b9151b;
+      --accent: #2f3542;
+      --radius: 22px;
+      --shadow: 0 22px 60px rgba(15, 17, 21, .12);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea, select { font: inherit; }
+
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      background: var(--bg);
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .topbar .inner {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar .badges { display: flex; gap: 18px; flex-wrap: wrap; }
+    .topbar strong { color: #fff; font-weight: 700; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229,231,235,.9);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 24px;
+    }
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), #ff6b70);
+      position: relative;
+      box-shadow: 0 12px 28px rgba(227,31,38,.24);
+    }
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 3px solid white;
+      border-left: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+      border-radius: 2px;
+    }
+    .logo span span { color: var(--brand); }
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #374151;
+    }
+    .menu a:hover { color: var(--brand); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .mobile-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #111827;
+      margin: 5px auto;
+      border-radius: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 800;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(227,31,38,.22);
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-dark { background: #111827; color: #fff; }
+    .btn-dark:hover { background: #000; transform: translateY(-1px); }
+    .btn-soft { background: #f3f4f6; color: #111827; }
+    .btn-soft:hover { background: #e5e7eb; }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.3); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    .hero {
+      background: #080a0e;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-slider {
+      position: relative;
+      min-height: clamp(660px, calc(100vh - 118px), 860px);
+      isolation: isolate;
+    }
+    .hero-slider::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 150px;
+      background: linear-gradient(to bottom, transparent, rgba(8,10,14,.92));
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .9s ease;
+      overflow: hidden;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    .hero-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8,10,14,.94) 0%, rgba(8,10,14,.78) 42%, rgba(8,10,14,.28) 100%),
+        radial-gradient(circle at 78% 16%, rgba(227,31,38,.24), transparent 30%),
+        linear-gradient(135deg, #111827, #252a33 48%, #090b0f);
+      z-index: -2;
+    }
+    .hero-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(90deg, black, transparent 78%);
+      z-index: -1;
+      opacity: .65;
+    }
+    .hero-slide.slide-2::before {
+      background:
+        linear-gradient(90deg, rgba(8,10,14,.95) 0%, rgba(8,10,14,.78) 44%, rgba(8,10,14,.18) 100%),
+        radial-gradient(circle at 80% 72%, rgba(227,31,38,.22), transparent 32%),
+        linear-gradient(135deg, #15191f, #4b525d 52%, #111827);
+    }
+    .hero-slide.slide-3::before {
+      background:
+        linear-gradient(90deg, rgba(8,10,14,.96) 0%, rgba(8,10,14,.75) 45%, rgba(8,10,14,.18) 100%),
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,.16), transparent 28%),
+        linear-gradient(135deg, #0c0f15, #333946 45%, #171a21);
+    }
+    .hero-slide-inner {
+      position: relative;
+      z-index: 2;
+      min-height: inherit;
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 48px;
+      align-items: center;
+      padding: 86px 0 118px;
+    }
+    .hero-copy {
+      transform: translateY(24px);
+      opacity: 0;
+      transition: transform .8s ease, opacity .8s ease;
+      transition-delay: .18s;
+    }
+    .hero-slide.active .hero-copy {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.17);
+      color: rgba(255,255,255,.86);
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      display: inline-block;
+      box-shadow: 0 0 0 8px rgba(227,31,38,.14);
+    }
+    .hero h1 {
+      margin: 20px 0 18px;
+      font-size: clamp(44px, 6.2vw, 82px);
+      line-height: .92;
+      letter-spacing: -.075em;
+      max-width: 820px;
+    }
+    .hero p.lead {
+      font-size: clamp(18px, 2vw, 22px);
+      color: rgba(255,255,255,.76);
+      max-width: 650px;
+      margin: 0 0 30px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 34px 0 32px;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 680px;
+    }
+    .stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      padding: 11px 14px;
+      color: rgba(255,255,255,.78);
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .stat strong {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(227,31,38,.98);
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+    .stat span { color: rgba(255,255,255,.72); }
+    .hero-visual {
+      min-height: 540px;
+      position: relative;
+      transform: translateX(38px) scale(.98);
+      opacity: 0;
+      transition: transform .95s ease, opacity .95s ease;
+      transition-delay: .28s;
+    }
+    .hero-slide.active .hero-visual {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    .hero-photo-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 38px;
+      overflow: hidden;
+      background: #1b2028;
+      box-shadow: 0 36px 95px rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .hero-photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(115deg, rgba(255,255,255,.14), transparent 26%, transparent 62%, rgba(0,0,0,.22)),
+        linear-gradient(to bottom, transparent 55%, rgba(0,0,0,.38));
+      pointer-events: none;
+    }
+    .scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #dfe4eb 0 46%, #6b7280 47% 49%, #2a2f39 50% 100%);
+    }
+    .scene .sky {
+      position: absolute;
+      inset: 0 0 46% 0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(255,255,255,.95) 0 42px, transparent 44px),
+        linear-gradient(135deg, #f5f7fb, #cdd5df);
+    }
+    .scene .ground {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 35%;
+      background:
+        radial-gradient(circle at 16% 55%, rgba(255,255,255,.16), transparent 22%),
+        linear-gradient(130deg, #7c838d, #383e49);
+    }
+    .scene .wall {
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      bottom: 27%;
+      height: 170px;
+      border-radius: 12px 12px 5px 5px;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 2px, transparent 2px 40px),
+        repeating-linear-gradient(90deg, transparent 0 86px, rgba(0,0,0,.12) 86px 91px),
+        linear-gradient(90deg, #d9dadd, #aaaeb7 55%, #858b96);
+      box-shadow: 0 28px 50px rgba(0,0,0,.28);
+    }
+    .scene .pillar {
+      position: absolute;
+      bottom: 27%;
+      width: 84px;
+      height: 238px;
+      border-radius: 10px 10px 4px 4px;
+      background:
+        repeating-linear-gradient(0deg, #d9dadd 0 36px, #bfc3ca 36px 41px),
+        linear-gradient(90deg, #f2f3f5, #b7bbc4);
+      box-shadow: 0 20px 46px rgba(0,0,0,.28);
+      z-index: 2;
+    }
+    .scene .pillar.one { left: 10%; }
+    .scene .pillar.two { right: 10%; height: 270px; }
+    .scene .rails {
+      position: absolute;
+      left: 24%;
+      right: 24%;
+      bottom: 42%;
+      height: 124px;
+      display: grid;
+      gap: 13px;
+      align-content: center;
+      z-index: 3;
+    }
+    .scene .rails span {
+      height: 16px;
+      border-radius: 3px;
+      background: #111827;
+      box-shadow: 0 8px 18px rgba(0,0,0,.22);
+    }
+    .scene.blocks {
+      background: linear-gradient(to bottom, #eef1f5 0 40%, #3c4350 41% 100%);
+    }
+    .scene.blocks .block-display {
+      position: absolute;
+      left: 9%;
+      right: 9%;
+      bottom: 17%;
+      height: 310px;
+      transform: perspective(800px) rotateY(-8deg) rotateX(2deg);
+      display: grid;
+      align-content: end;
+      gap: 12px;
+    }
+    .scene.blocks .block-display span {
+      height: 56px;
+      border-radius: 12px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.48), transparent 35%, rgba(0,0,0,.15)),
+        repeating-linear-gradient(90deg, transparent 0 110px, rgba(0,0,0,.11) 110px 116px),
+        #c9ccd2;
+      box-shadow: 0 14px 22px rgba(0,0,0,.18);
+    }
+    .scene.blocks .block-display span:nth-child(2) { background-color: #3f444d; }
+    .scene.blocks .block-display span:nth-child(3) { background-color: #b9b0a4; }
+    .scene.blocks .block-display span:nth-child(4) { background-color: #e8e8e5; }
+    .scene.blocks .garden {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 28%;
+      background:
+        radial-gradient(circle at 20% 20%, #6aa05e 0 18px, transparent 20px),
+        radial-gradient(circle at 31% 30%, #5d8d54 0 16px, transparent 18px),
+        radial-gradient(circle at 70% 22%, #597f51 0 18px, transparent 21px),
+        linear-gradient(150deg, #354334, #232a2a);
+    }
+    .scene.gate {
+      background: linear-gradient(to bottom, #e9edf2 0 43%, #525b68 44% 100%);
+    }
+    .scene.gate .gate-panel {
+      position: absolute;
+      left: 22%;
+      right: 22%;
+      bottom: 31%;
+      height: 230px;
+      border-radius: 10px;
+      background:
+        repeating-linear-gradient(90deg, #111827 0 22px, #262c36 22px 29px),
+        #111827;
+      box-shadow: 0 22px 52px rgba(0,0,0,.35);
+      z-index: 2;
+    }
+    .scene.gate .pillar.one { left: 12%; height: 290px; }
+    .scene.gate .pillar.two { right: 12%; height: 290px; }
+    .scene.gate .driveway {
+      position: absolute;
+      left: 20%;
+      right: 16%;
+      bottom: -4%;
+      height: 38%;
+      border-radius: 60% 0 0 0;
+      background: linear-gradient(120deg, #9ba2ac, #454b56);
+    }
+    .floating-box {
+      position: absolute;
+      right: -18px;
+      bottom: 36px;
+      width: min(305px, 70%);
+      background: rgba(255,255,255,.95);
+      color: #111827;
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+      z-index: 5;
+      backdrop-filter: blur(16px);
+    }
+    .floating-box strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -.02em;
+    }
+    .floating-box p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 14px;
+    }
+    .mini-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .mini-swatch {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      border: 1px solid rgba(0,0,0,.1);
+    }
+    .sw1 { background: #d8d8d6; } .sw2 { background: #454a50; } .sw3 { background: #191b20; } .sw4 { background: #b9b1a5; }
+    .hero-controls {
+      position: absolute;
+      left: 50%;
+      bottom: 36px;
+      transform: translateX(-50%);
+      width: min(var(--max), calc(100% - 32px));
+      z-index: 6;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      pointer-events: none;
+    }
+    .hero-dots {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+    .hero-dot {
+      width: 48px;
+      height: 5px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.28);
+      cursor: pointer;
+      overflow: hidden;
+      padding: 0;
+    }
+    .hero-dot span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--brand);
+      border-radius: inherit;
+    }
+    .hero-dot.active span {
+      animation: heroProgress 6s linear forwards;
+    }
+    .hero-arrows {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+    .hero-arrow {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: 900;
+      transition: .2s ease;
+    }
+    .hero-arrow:hover { background: rgba(255,255,255,.18); }
+    @keyframes heroProgress { from { width: 0%; } to { width: 100%; } }
+
+    section { padding: 92px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+    .section-kicker {
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
+      font-weight: 900;
+      margin: 0 0 8px;
+    }
+    h2 {
+      font-size: clamp(32px, 4.2vw, 52px);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+      margin: 0;
+    }
+    .section-head p {
+      max-width: 470px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .benefit {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 16px 44px rgba(17,24,39,.06);
+    }
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #fef2f2;
+      color: var(--brand);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    .benefit h3, .product-card h3, .step h3, .faq h3 { margin: 0 0 8px; letter-spacing: -.025em; }
+    .benefit p, .product-card p, .step p, .faq p { margin: 0; color: var(--muted); }
+
+    .dark-section {
+      background: var(--bg);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .dark-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 86% 18%, rgba(227,31,38,.18), transparent 34%);
+      pointer-events: none;
+    }
+    .dark-section .container { position: relative; z-index: 1; }
+    .dark-section .section-head p { color: rgba(255,255,255,.68); }
+
+    .product-toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; }
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.82);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .search-box {
+      min-width: min(340px, 100%);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      padding: 12px 18px;
+      outline: none;
+    }
+    .search-box::placeholder { color: rgba(255,255,255,.5); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      color: var(--text);
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 100%;
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+      display: flex;
+      flex-direction: column;
+    }
+    .product-visual {
+      height: 174px;
+      padding: 20px;
+      background:
+        linear-gradient(135deg, #f2f3f5, #d4d7dd);
+      position: relative;
+      overflow: hidden;
+    }
+    .block-stack {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 20px;
+      height: 96px;
+      display: grid;
+      gap: 6px;
+      align-content: end;
+      transform: perspective(700px) rotateX(0deg) rotateY(-8deg);
+    }
+    .block-stack span {
+      display: block;
+      height: 24px;
+      border-radius: 6px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.5), transparent 34%),
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(0,0,0,.08) 58px 62px),
+        var(--stone, #9ca3af);
+      box-shadow: 0 8px 15px rgba(0,0,0,.12);
+    }
+    .product-card:nth-child(2n) { --stone: #444951; }
+    .product-card:nth-child(3n) { --stone: #d1ccc3; }
+    .product-card:nth-child(4n) { --stone: #a6a0a0; }
+    .product-card:nth-child(5n) { --stone: #1f2328; }
+    .badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(17,24,39,.88);
+      color: #fff;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .product-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+    .chip {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .product-card .btn { margin-top: auto; width: 100%; }
+    .product-note {
+      margin-top: 24px;
+      color: rgba(255,255,255,.62);
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .93fr 1.07fr;
+      gap: 52px;
+      align-items: center;
+    }
+    .image-panel {
+      min-height: 520px;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.12)),
+        repeating-linear-gradient(0deg, #d8dadd 0 42px, #c1c4ca 42px 47px),
+        #d1d5db;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .image-panel::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 34%;
+      background:
+        linear-gradient(90deg, #1f2328 0 13%, transparent 13% 21%, #1f2328 21% 34%, transparent 34% 42%, #1f2328 42% 55%, transparent 55% 63%, #1f2328 63% 76%, transparent 76% 84%, #1f2328 84% 100%);
+      opacity: .92;
+    }
+    .callout {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+      z-index: 2;
+      background: #fff;
+      border-radius: 24px;
+      padding: 20px;
+      width: min(320px, calc(100% - 52px));
+      box-shadow: 0 20px 50px rgba(0,0,0,.18);
+    }
+    .callout strong { display: block; font-size: 20px; letter-spacing: -.03em; }
+    .callout span { display: block; color: var(--muted); margin-top: 4px; font-weight: 600; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+    .step {
+      background: var(--light);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: inline-flex;
+      width: 52px;
+      height: 52px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: #111827;
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.18), rgba(0,0,0,.05)),
+        repeating-linear-gradient(0deg, #d6d7d9 0 28px, #babdc3 28px 32px);
+      position: relative;
+      box-shadow: 0 18px 45px rgba(17,24,39,.08);
+      border: 1px solid var(--line);
+    }
+    .gallery-item.big { grid-column: span 2; grid-row: span 2; }
+    .gallery-item.dark { background: repeating-linear-gradient(0deg, #474d56 0 28px, #30343b 28px 32px); }
+    .gallery-item.warm { background: repeating-linear-gradient(0deg, #c5b8a6 0 28px, #a99d8e 28px 32px); }
+    .gallery-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      background: rgba(255,255,255,.91);
+      border-radius: 18px;
+      padding: 14px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+    .gallery-label span { display: block; font-size: 13px; color: var(--muted); font-weight: 700; margin-top: 2px; }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .faq {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 30px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.1);
+      color: var(--text);
+      box-shadow: 0 22px 70px rgba(0,0,0,.25);
+    }
+    .contact-card h2 { color: var(--text); }
+    .contact-list { display: grid; gap: 14px; margin-top: 26px; }
+    .contact-list a, .contact-list div {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      font-weight: 800;
+    }
+    form {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      padding: 30px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: rgba(255,255,255,.82); font-weight: 800; font-size: 14px; }
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.09);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 15px;
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.45); }
+    select option { color: #111827; }
+    textarea { min-height: 150px; resize: vertical; }
+    .form-help { color: rgba(255,255,255,.56); font-size: 13px; margin: 14px 0 0; }
+
+    footer {
+      background: #090b0f;
+      color: rgba(255,255,255,.65);
+      padding: 38px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 26px;
+    }
+    footer h4 { color: #fff; margin: 0 0 12px; }
+    footer p, footer a { margin: 0; color: rgba(255,255,255,.62); font-weight: 600; }
+    footer a { display: block; margin-bottom: 9px; }
+    .legal-note {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 28px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,.47);
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 980px) {
+      .menu, .nav-actions { display: none; }
+      .mobile-toggle { display: block; }
+      .menu.open {
+        display: flex;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 16px;
+      }
+      .menu.open a { padding: 14px; border-radius: 14px; }
+      .menu.open a:hover { background: #f3f4f6; }
+      .hero-grid, .split, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; }
+      .hero-visual { min-height: 480px; }
+      .benefits, .steps { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .topbar .inner { align-items: flex-start; flex-direction: column; padding: 10px 0; }
+      .hero-grid { padding: 52px 0; }
+      .hero-stats, .benefits, .steps, .product-grid, .faq-grid, .form-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 410px; }
+      .wall-card { inset: 0; padding: 18px; border-radius: 26px; }
+      .floating-box { left: 18px; right: 18px; width: auto; bottom: 18px; }
+      section { padding: 68px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .gallery { grid-template-columns: 1fr; grid-auto-rows: 210px; }
+      .gallery-item.big { grid-column: auto; grid-row: auto; }
+      .contact-card, form { padding: 22px; border-radius: 24px; }
+    }
+
+    @media (max-width: 980px) {
+      .hero-slide-inner { grid-template-columns: 1fr; padding: 64px 0 108px; gap: 30px; }
+      .hero-slider { min-height: auto; }
+      .hero-slide { position: relative; display: none; }
+      .hero-slide.active { display: block; }
+      .hero-visual { min-height: 430px; transform: none; }
+      .floating-box { right: 18px; bottom: 18px; }
+      .hero-controls { bottom: 24px; }
+    }
+    @media (max-width: 680px) {
+      .hero-slide-inner { padding: 48px 0 92px; }
+      .hero h1 { font-size: clamp(40px, 12vw, 58px); }
+      .hero p.lead { font-size: 17px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 350px; }
+      .hero-photo-card { border-radius: 26px; }
+      .floating-box { left: 16px; right: 16px; width: auto; padding: 18px; }
+      .hero-controls { align-items: center; }
+      .hero-dot { width: 34px; }
+      .hero-arrow { width: 42px; height: 42px; }
+    }
+
+    /* ============================================================
+       HERO BACKGROUND IMAGES
+       ضع صور الهيرو داخل مجلد images بنفس هذه الأسماء:
+       images/hero-1.jpg
+       images/hero-2.jpg
+       images/hero-3.jpg
+       يمكنك استعمال .jpg أو تعديل الأسماء هنا حسب الحاجة.
+       ============================================================ */
+    .hero-slide {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .hero-slide.slide-1 { background-image: url("images/hero-1.jpg"); }
+    .hero-slide.slide-2 { background-image: url("images/hero-2.jpg"); }
+    .hero-slide.slide-3 { background-image: url("images/hero-3.jpg"); }
+
+    .hero-slide::before {
+      background:
+        linear-gradient(90deg, rgba(8,10,14,.88) 0%, rgba(8,10,14,.72) 43%, rgba(8,10,14,.28) 100%),
+        linear-gradient(to bottom, rgba(8,10,14,.22), rgba(8,10,14,.58)) !important;
+      z-index: 0 !important;
+    }
+    .hero-slide::after {
+      z-index: 1 !important;
+      opacity: .34;
+      mask-image: linear-gradient(90deg, black, transparent 82%);
+    }
+    .hero-slide.slide-2::before,
+    .hero-slide.slide-3::before {
+      background:
+        linear-gradient(90deg, rgba(8,10,14,.88) 0%, rgba(8,10,14,.72) 43%, rgba(8,10,14,.28) 100%),
+        linear-gradient(to bottom, rgba(8,10,14,.22), rgba(8,10,14,.58)) !important;
+    }
+    .hero-slide-inner {
+      grid-template-columns: minmax(0, 780px) !important;
+      justify-content: start;
+    }
+    .hero-copy {
+      max-width: 780px;
+      padding: 28px;
+      border-radius: 30px;
+      background: rgba(8, 10, 14, .28);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 28px 80px rgba(0,0,0,.18);
+    }
+    .hero-visual { display: none !important; }
+
+    @media (max-width: 680px) {
+      .hero-copy {
+        padding: 18px;
+        border-radius: 24px;
+      }
+      .hero-slide {
+        background-position: center center;
+      }
+    }
+
+
+    /* ============================================================
+       KAISER-STYLE HERO: only background image + text + motion
+       Images to add:
+       images/hero-1.jpg
+       images/hero-2.jpg
+       images/hero-3.jpg
+       ============================================================ */
+    .hero-kaiser {
+      background: #050608;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-kaiser .hero-slider {
+      min-height: clamp(620px, calc(100vh - 118px), 840px);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-kaiser .hero-slider::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 210px;
+      background: linear-gradient(to bottom, rgba(5,6,8,0), rgba(5,6,8,.86));
+      z-index: 5;
+      pointer-events: none;
+    }
+    .hero-kaiser .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+      overflow: hidden;
+      background: #050608;
+    }
+    .hero-kaiser .hero-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .hero-kaiser .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+    }
+    .hero-kaiser .slide-1 .hero-bg { background-image: url("images/hero-1.jpg"); }
+    .hero-kaiser .slide-2 .hero-bg { background-image: url("images/hero-2.jpg"); }
+    .hero-kaiser .slide-3 .hero-bg { background-image: url("images/hero-3.jpg"); }
+    .hero-kaiser .hero-slide.active .hero-bg {
+      animation: heroSlowZoom 6.2s ease-out forwards;
+    }
+    .hero-kaiser .hero-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1 !important;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.54) 38%, rgba(0,0,0,.16) 76%, rgba(0,0,0,.25) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,.44));
+    }
+    .hero-kaiser .hero-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2 !important;
+      background: linear-gradient(to right, rgba(227,31,38,.28), transparent 38%);
+      opacity: .5;
+      mask-image: none;
+    }
+    .hero-kaiser .hero-slide-inner {
+      position: relative;
+      z-index: 4;
+      min-height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 92px 0 122px;
+    }
+    .hero-kaiser .hero-copy {
+      max-width: 820px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      opacity: 1;
+      transform: none;
+    }
+    .hero-kaiser .kaiser-pretitle {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: clamp(18px, 2.15vw, 29px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: .01em;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .hero-kaiser h1 {
+      margin: 0;
+      max-width: 900px;
+      color: #fff;
+      font-size: clamp(48px, 6.7vw, 92px);
+      line-height: .96;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      text-shadow: 0 14px 35px rgba(0,0,0,.32);
+      opacity: 0;
+      transform: translateY(34px);
+    }
+    .hero-kaiser .kaiser-subtitle {
+      margin: 15px 0 0;
+      color: rgba(255,255,255,.9);
+      font-size: clamp(20px, 2.45vw, 34px);
+      line-height: 1.12;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(30px);
+      max-width: 820px;
+    }
+    .hero-kaiser .hero-actions {
+      margin-top: 34px;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .hero-kaiser .hero-slide.active .kaiser-pretitle {
+      animation: heroTextUp .72s ease-out .18s forwards;
+    }
+    .hero-kaiser .hero-slide.active h1 {
+      animation: heroTextUp .78s ease-out .34s forwards;
+    }
+    .hero-kaiser .hero-slide.active .kaiser-subtitle {
+      animation: heroTextUp .78s ease-out .52s forwards;
+    }
+    .hero-kaiser .hero-slide.active .hero-actions {
+      animation: heroTextUp .72s ease-out .72s forwards;
+    }
+    .hero-kaiser .hero-actions .btn {
+      min-width: 188px;
+      border-radius: 0;
+      padding: 15px 28px;
+      background: var(--brand);
+      box-shadow: none;
+      text-transform: none;
+    }
+    .hero-kaiser .hero-actions .btn:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+    }
+    .hero-kaiser .hero-controls {
+      position: absolute;
+      left: 50%;
+      bottom: 34px;
+      transform: translateX(-50%);
+      width: min(var(--max), calc(100% - 32px));
+      z-index: 8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .hero-kaiser .hero-dots,
+    .hero-kaiser .hero-arrows {
+      pointer-events: auto;
+    }
+    .hero-kaiser .hero-dot {
+      width: 54px;
+      height: 4px;
+      border-radius: 0;
+      background: rgba(255,255,255,.34);
+    }
+    .hero-kaiser .hero-dot span { background: var(--brand); }
+    .hero-kaiser .hero-arrow {
+      width: 54px;
+      height: 54px;
+      border-radius: 0;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.28);
+      backdrop-filter: blur(8px);
+    }
+    .hero-kaiser .hero-arrow:hover { background: var(--brand); border-color: var(--brand); }
+    @keyframes heroTextUp {
+      from { opacity: 0; transform: translateY(34px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroSlowZoom {
+      from { transform: scale(1.04); }
+      to { transform: scale(1.12); }
+    }
+    @media (max-width: 980px) {
+      .hero-kaiser .hero-slider { min-height: 660px; }
+      .hero-kaiser .hero-slide { position: absolute; display: block; }
+      .hero-kaiser .hero-slide-inner { padding: 78px 0 110px; }
+    }
+    @media (max-width: 680px) {
+      .hero-kaiser .hero-slider { min-height: 620px; }
+      .hero-kaiser .hero-slide-inner { padding: 62px 0 104px; }
+      .hero-kaiser h1 { font-size: clamp(42px, 13vw, 62px); }
+      .hero-kaiser .kaiser-subtitle { font-size: 20px; }
+      .hero-kaiser .hero-actions .btn { width: auto; min-width: 170px; }
+      .hero-kaiser .hero-dot { width: 38px; }
+      .hero-kaiser .hero-arrow { width: 46px; height: 46px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div class="badges">
+        <span><strong>Betonsteine</strong> für Zäune & Mauern</span>
+        <span>Beratung · Lieferung · Projektanfrage</span>
+      </div>
+      <div>Mo–Sa nach Vereinbarung</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#start" aria-label="Zaunmacher24 Startseite">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Zaunmacher<span>24</span></span>
+      </a>
+      <nav class="menu" id="menu">
+        <a href="#produkte">Betonsteine</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#referenzen">Ideen</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-soft" href="tel:+490000000000">Anrufen</a>
+        <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="start">
+
+    <!--
+      HERO-BILDER ÄNDERN:
+      Legen Sie Ihre drei Bilder in den Ordner "images" mit diesen Namen:
+      1) hero-1.jpg
+      2) hero-2.jpg
+      3) hero-3.jpg
+      Danach index.html öffnen oder hochladen.
+    -->
+    <section class="hero hero-kaiser" aria-label="Zaunmacher24 Hero Slider">
+      <div class="hero-slider" id="heroSlider">
+        <article class="hero-slide slide-1 active" data-slide="0">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="container hero-slide-inner">
+            <div class="hero-copy">
+              <p class="kaiser-pretitle">Betonsteine, Zaunsteine & Mauerelemente</p>
+              <h1>Moderne Betonstein-Systeme</h1>
+              <p class="kaiser-subtitle">für moderne Außenanlagen</p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#produkte">Zum Sortiment</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide slide-2" data-slide="1">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="container hero-slide-inner">
+            <div class="hero-copy">
+              <p class="kaiser-pretitle">Beratung · Anfrage · Lieferung</p>
+              <h1>Passende Lösung für Ihr Projekt</h1>
+              <p class="kaiser-subtitle">Maße, Farben und Zubehör nach Bedarf abgestimmt</p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide slide-3" data-slide="2">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="container hero-slide-inner">
+            <div class="hero-copy">
+              <p class="kaiser-pretitle">Massiv, sauber und modern</p>
+              <h1>Ihr Vorhaben individuell geplant</h1>
+              <p class="kaiser-subtitle">Senden Sie uns Ihr Projekt – wir prüfen die passende Ausführung</p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="hero-controls" aria-label="Hero Slider Steuerung">
+          <div class="hero-dots" role="tablist" aria-label="Slides auswählen">
+            <button class="hero-dot active" type="button" aria-label="Slide 1"><span></span></button>
+            <button class="hero-dot" type="button" aria-label="Slide 2"><span></span></button>
+            <button class="hero-dot" type="button" aria-label="Slide 3"><span></span></button>
+          </div>
+          <div class="hero-arrows">
+            <button class="hero-arrow" id="heroPrev" type="button" aria-label="Vorheriger Slide">‹</button>
+            <button class="hero-arrow" id="heroNext" type="button" aria-label="Nächster Slide">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Warum Betonsteine?</p>
+            <h2>Stabil, modern und individuell planbar.</h2>
+          </div>
+          <p>Betonsteine eignen sich für repräsentative Einfahrten, Sichtschutz, Gartenmauern und Kombinationen mit Stahl- oder Aluminiumfeldern.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit">
+            <div class="icon">▣</div>
+            <h3>Langlebig</h3>
+            <p>Massive Elemente für stabile Zaun- und Mauerlösungen im Außenbereich.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon">◩</div>
+            <h3>Moderne Optik</h3>
+            <p>Klare Linien, verschiedene Oberflächen und Farben für moderne Architektur.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon">▤</div>
+            <h3>Flexibel kombinierbar</h3>
+            <p>Passend zu Metallfeldern, Toren, Pforten, Fundamenten und Zubehör.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon">✉</div>
+            <h3>Anfrage statt Onlinepreis</h3>
+            <p>Jedes Projekt wird individuell nach Menge, Lieferung und Ausführung geprüft.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="produkte" class="dark-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Sortiment</p>
+            <h2>Betonsteine & Zubehör</h2>
+          </div>
+          <p>Wählen Sie eine Kategorie oder suchen Sie nach Produktnamen. Preise werden auf dieser Website bewusst nicht angezeigt.</p>
+        </div>
+
+        <div class="product-toolbar">
+          <div class="filters" aria-label="Produktfilter">
+            <button class="filter-btn active" data-filter="all">Alle</button>
+            <button class="filter-btn" data-filter="zaunsteine">Zaunsteine</button>
+            <button class="filter-btn" data-filter="mauer">Mauer & Fassade</button>
+            <button class="filter-btn" data-filter="fundament">Fundamente</button>
+            <button class="filter-btn" data-filter="garten">Garten</button>
+          </div>
+          <input class="search-box" id="productSearch" type="search" placeholder="Produkt suchen, z. B. ROMA, GORC, KOMBO..." />
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="zaunsteine" data-name="roma vital eco zaunsteine betonsteine glatt">
+            <div class="product-visual"><span class="badge">Zaunstein</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>ROMA Vital ECO</h3>
+              <p>Glatter Betonstein für moderne Zaunanlagen mit passender Abdeckplatte.</p>
+              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">57 × 19,5 × 20 cm</span><span class="chip">Mehrere Farben</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Vital ECO">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="roma horizon eco zaunsteine betonsteine glatt">
+            <div class="product-visual"><span class="badge">Zaunstein</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>ROMA Horizon ECO</h3>
+              <p>Schlankes System für horizontale Zaun- und Mauerlinien in zeitloser Optik.</p>
+              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">50,4 cm Länge</span><span class="chip">Caps verfügbar</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Horizon ECO">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="roma integra eco betonsteine zaunsteine glatt">
+            <div class="product-visual"><span class="badge">Großformat</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>ROMA Integra ECO</h3>
+              <p>Breiter Betonstein für elegante, ruhige Flächen und reduzierte Fugenwirkung.</p>
+              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">75,6 cm Länge</span><span class="chip">Modern</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Integra ECO">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="roma horizon modular fence betonsteine zaunsteine">
+            <div class="product-visual"><span class="badge">Modular</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>ROMA Horizon</h3>
+              <p>Modulares System mit unterschiedlichen Breiten für Zäune, Pfeiler und Mauern.</p>
+              <div class="product-meta"><span class="chip">Modular</span><span class="chip">20 / 28 / 36 cm</span><span class="chip">Farbauswahl</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Horizon">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="roma mega betonsteine smooth fence">
+            <div class="product-visual"><span class="badge">Massiv</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>ROMA Mega</h3>
+              <p>Massive Elemente für markante Zaun- und Sichtschutzlösungen.</p>
+              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">Großformat</span><span class="chip">Sichtschutz</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Mega">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="gorc peak split fence betonsteine gespalten">
+            <div class="product-visual"><span class="badge">Split</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>GORC® Peak</h3>
+              <p>Gespaltene Oberfläche mit Naturstein-Charakter für robuste Zaunanlagen.</p>
+              <div class="product-meta"><span class="chip">Gespalten</span><span class="chip">Natursteinoptik</span><span class="chip">Caps</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="GORC Peak">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="gorc de luxe gl22 gl38 betonsteine split fence">
+            <div class="product-visual"><span class="badge">Premium</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>GORC® de Luxe</h3>
+              <p>Premium-Split-Optik für hochwertige Mauer- und Zaunkombinationen.</p>
+              <div class="product-meta"><span class="chip">GL 22 / GL 38</span><span class="chip">Split</span><span class="chip">Viele Farben</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="GORC de Luxe">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="zaunsteine" data-name="kombo beton elements zaun betonsteine">
+            <div class="product-visual"><span class="badge">System</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>KOMBO®</h3>
+              <p>Betonelemente für moderne Zaunfelder und dekorative Wandlösungen.</p>
+              <div class="product-meta"><span class="chip">Systemelemente</span><span class="chip">Grau / Graphit / Weiß</span><span class="chip">Modern</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="KOMBO">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="mauer" data-name="tom facade blocks fassade mauersteine beton">
+            <div class="product-visual"><span class="badge">Fassade</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>TOM Fassadenblöcke</h3>
+              <p>Gespaltene Fassaden- und Mauerblöcke für Sockel, Wände und Akzente.</p>
+              <div class="product-meta"><span class="chip">Fassade</span><span class="chip">Single-sided split</span><span class="chip">Ecken verfügbar</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="TOM Fassadenblöcke">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="garten" data-name="rio slope blocks hangbefestigung gartenmauer betonsteine">
+            <div class="product-visual"><span class="badge">Garten</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>RIO Hangsteine</h3>
+              <p>Blockelemente für Böschungen, Hangbefestigungen und Gartenmauern.</p>
+              <div class="product-meta"><span class="chip">Slope blocks</span><span class="chip">Garten</span><span class="chip">Caps</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="RIO Hangsteine">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="garten" data-name="mogielica stone palisaden garten beton palisades">
+            <div class="product-visual"><span class="badge">Palisaden</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>MOGIELICA & STONE Palisaden</h3>
+              <p>Betonpalisaden für Beete, Kanten, Höhenversätze und Gartenstruktur.</p>
+              <div class="product-meta"><span class="chip">Palisaden</span><span class="chip">Garten</span><span class="chip">Mehrere Höhen</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="Palisaden">Details anfragen</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="fundament" data-name="prefabricated foundations boards connectors beton fundament zaun">
+            <div class="product-visual"><span class="badge">Fundament</span><div class="block-stack"><span></span><span></span><span></span></div></div>
+            <div class="product-body">
+              <h3>Fundamente & Verbinder</h3>
+              <p>Vorgefertigte Betonfundamente sowie Stahl- und Kunststoffverbinder.</p>
+              <div class="product-meta"><span class="chip">Fundamentplatten</span><span class="chip">Verbinder</span><span class="chip">Zaunmontage</span></div>
+              <a class="btn btn-primary" href="#kontakt" data-product="Fundamente & Verbinder">Details anfragen</a>
+            </div>
+          </article>
+        </div>
+        <p class="product-note">Hinweis: Produktnamen, Maße und Farbbezeichnungen dienen der Orientierung. Verfügbarkeit, technische Details und Liefermöglichkeiten werden individuell bestätigt.</p>
+      </div>
+    </section>
+
+    <section id="beratung">
+      <div class="container split">
+        <div class="image-panel" aria-hidden="true">
+          <div class="callout">
+            <strong>Alles für Ihre Anfrage</strong>
+            <span>Menge, Farbe, Maße, Lieferadresse und gewünschte Ausführung.</span>
+          </div>
+        </div>
+        <div>
+          <p class="section-kicker">Beratung</p>
+          <h2>Welche Betonsteine passen zu Ihrem Projekt?</h2>
+          <p style="color: var(--muted); font-size: 18px; margin: 18px 0 24px;">Senden Sie uns eine kurze Projektbeschreibung. Wir prüfen, welche Systeme geeignet sind, welche Zubehörteile benötigt werden und wie die Lieferung geplant werden kann.</p>
+          <div class="benefits" style="grid-template-columns: 1fr 1fr; margin-top: 26px;">
+            <article class="benefit"><div class="icon">1</div><h3>Zaun oder Mauer?</h3><p>Wir unterscheiden zwischen Sichtschutz, Pfeilern, Gartenmauer und Fundament.</p></article>
+            <article class="benefit"><div class="icon">2</div><h3>Maße & Menge</h3><p>Teilen Sie Länge, Höhe und gewünschte Ausführung mit.</p></article>
+            <article class="benefit"><div class="icon">3</div><h3>Farbe & Oberfläche</h3><p>Glatt, gespalten, strukturiert, hell, dunkel oder natursteinähnlich.</p></article>
+            <article class="benefit"><div class="icon">4</div><h3>Lieferung</h3><p>Lieferadresse und Zufahrt helfen bei der Planung.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf" style="background: var(--light);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Ablauf</p>
+            <h2>Von der Idee zur Anfrage.</h2>
+          </div>
+          <p>Ein einfacher Prozess, damit Ihr Projekt schnell eingeordnet werden kann.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Projekt beschreiben</h3><p>Senden Sie Länge, Höhe, Einsatzbereich und gewünschte Optik.</p></article>
+          <article class="step"><h3>Produkt auswählen</h3><p>Wir schlagen passende Betonsteine, Abdeckungen und Zubehör vor.</p></article>
+          <article class="step"><h3>Menge prüfen</h3><p>Die benötigte Menge wird projektbezogen abgeschätzt oder berechnet.</p></article>
+          <article class="step"><h3>Angebot erhalten</h3><p>Sie bekommen eine individuelle Rückmeldung mit weiteren Details.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="referenzen">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Ideen</p>
+            <h2>So können Betonsteine eingesetzt werden.</h2>
+          </div>
+          <p>Beispiele für typische Einsatzbereiche im privaten und gewerblichen Außenbereich.</p>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item big"><div class="gallery-label">Moderner Sichtschutz<span>Betonpfeiler mit Metallfeldern</span></div></div>
+          <div class="gallery-item dark"><div class="gallery-label">Graphitfarbene Mauer<span>Ruhige, klare Optik</span></div></div>
+          <div class="gallery-item warm"><div class="gallery-label">Gartenmauer<span>Struktur und Höhenversatz</span></div></div>
+          <div class="gallery-item"><div class="gallery-label">Einfahrt<span>Zaun, Tor und Pforte</span></div></div>
+          <div class="gallery-item dark"><div class="gallery-label">Split-Oberfläche<span>Naturstein-Charakter</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background: var(--light);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">FAQ</p>
+            <h2>Häufige Fragen</h2>
+          </div>
+          <p>Kurze Antworten vor der Anfrage.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq"><h3>Warum werden keine Preise angezeigt?</h3><p>Die Kosten hängen von Menge, Lieferort, Verfügbarkeit, Zubehör und Projektumfang ab. Deshalb wird jedes Projekt individuell beantwortet.</p></article>
+          <article class="faq"><h3>Kann ich nur Material anfragen?</h3><p>Ja. Sie können Material, Lieferung oder eine komplette Projektberatung anfragen.</p></article>
+          <article class="faq"><h3>Welche Angaben werden benötigt?</h3><p>Am besten Länge, gewünschte Höhe, Farbe/Oberfläche, Fotos vom Projektort und Lieferadresse.</p></article>
+          <article class="faq"><h3>Gibt es verschiedene Farben?</h3><p>Ja. Viele Systeme sind in hellen, grauen, graphitfarbenen oder natursteinähnlichen Varianten verfügbar.</p></article>
+          <article class="faq"><h3>Sind Abdeckplatten verfügbar?</h3><p>Für viele Systeme gibt es passende Caps bzw. Abdeckplatten als Abschluss.</p></article>
+          <article class="faq"><h3>Kann man Betonsteine mit Metall kombinieren?</h3><p>Ja. Betonpfeiler und Mauerelemente werden häufig mit Stahl- oder Aluminiumfeldern kombiniert.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="dark-section">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <p class="section-kicker">Kontakt</p>
+          <h2>Projekt anfragen</h2>
+          <p style="color: var(--muted); margin-top: 14px;">Schreiben Sie kurz, welche Betonsteine Sie interessieren und wo das Projekt umgesetzt werden soll.</p>
+          <div class="contact-list">
+            <a href="tel:+490000000000"><span>☎</span><span>+49 000 000000<br><small>Telefonnummer ersetzen</small></span></a>
+            <a href="mailto:info@zaunmacher24.de"><span>✉</span><span>info@zaunmacher24.de<br><small>E-Mail ersetzen</small></span></a>
+            <div><span>⌖</span><span>Deutschland<br><small>Standort / Liefergebiet eintragen</small></span></div>
+          </div>
+        </div>
+        <form action="mailto:info@zaunmacher24.de" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" placeholder="Ihr Name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="Telefon" type="tel" placeholder="Telefonnummer">
+            </div>
+            <div class="field">
+              <label for="email">E-Mail</label>
+              <input id="email" name="Email" type="email" placeholder="E-Mail-Adresse" required>
+            </div>
+            <div class="field">
+              <label for="interest">Interesse</label>
+              <select id="interest" name="Interesse">
+                <option>Betonsteine / Zaunsteine</option>
+                <option>Fundamente & Verbinder</option>
+                <option>Palisaden / Gartenmauer</option>
+                <option>Beratung allgemein</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="product">Gewünschtes Produkt</label>
+              <input id="product" name="Produkt" type="text" placeholder="z. B. ROMA Horizon, GORC Peak, KOMBO">
+            </div>
+            <div class="field full">
+              <label for="message">Projektbeschreibung</label>
+              <textarea id="message" name="Nachricht" placeholder="Bitte Länge, Höhe, Farbe, Lieferort und Besonderheiten beschreiben."></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="margin-top: 18px;">Anfrage vorbereiten</button>
+          <p class="form-help">Hinweis: Für eine echte Website sollte das Formular später mit einem Server, WordPress-Plugin oder Formularanbieter verbunden werden.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#fff; margin-bottom:12px;"><span class="logo-mark"></span><span>Zaunmacher<span>24</span></span></div>
+          <p>Betonsteine, Zaunsteine und Zubehör für moderne Außenanlagen.</p>
+        </div>
+        <div>
+          <h4>Produkte</h4>
+          <a href="#produkte">Betonsteine</a>
+          <a href="#produkte">Zaunsteine</a>
+          <a href="#produkte">Fundamente</a>
+          <a href="#produkte">Palisaden</a>
+        </div>
+        <div>
+          <h4>Service</h4>
+          <a href="#beratung">Beratung</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <a href="#">Impressum einfügen</a>
+          <a href="#">Datenschutz einfügen</a>
+          <a href="#">AGB optional</a>
+        </div>
+      </div>
+      <p class="legal-note">© <span id="year"></span> Zaunmacher24. Diese Demo-Seite ist eine Vorlage. Firmenangaben, Telefon, E-Mail, Impressum, Datenschutz, Produktverfügbarkeit und technische Daten vor Veröffentlichung prüfen.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('mobileToggle');
+    const filters = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+    const search = document.getElementById('productSearch');
+    const productInput = document.getElementById('product');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.remove('open')));
+
+
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    const heroPrev = document.getElementById('heroPrev');
+    const heroNext = document.getElementById('heroNext');
+    let heroIndex = 0;
+    let heroTimer;
+
+    function showHeroSlide(index) {
+      heroIndex = (index + heroSlides.length) % heroSlides.length;
+      heroSlides.forEach((slide, i) => slide.classList.toggle('active', i === heroIndex));
+      heroDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === heroIndex);
+        const bar = dot.querySelector('span');
+        bar.style.animation = 'none';
+        bar.offsetHeight;
+        if (i === heroIndex) bar.style.animation = 'heroProgress 6s linear forwards';
+      });
+    }
+
+    function nextHeroSlide() { showHeroSlide(heroIndex + 1); }
+    function resetHeroTimer() {
+      clearInterval(heroTimer);
+      heroTimer = setInterval(nextHeroSlide, 6000);
+    }
+
+    heroDots.forEach((dot, i) => dot.addEventListener('click', () => {
+      showHeroSlide(i);
+      resetHeroTimer();
+    }));
+    heroPrev.addEventListener('click', () => { showHeroSlide(heroIndex - 1); resetHeroTimer(); });
+    heroNext.addEventListener('click', () => { showHeroSlide(heroIndex + 1); resetHeroTimer(); });
+    showHeroSlide(0);
+    resetHeroTimer();
+
+    let currentFilter = 'all';
+    function applyFilter() {
+      const term = search.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const matchCategory = currentFilter === 'all' || card.dataset.category === currentFilter;
+        const matchSearch = !term || card.dataset.name.includes(term) || card.innerText.toLowerCase().includes(term);
+        card.classList.toggle('hidden', !(matchCategory && matchSearch));
+      });
+    }
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        applyFilter();
+      });
+    });
+    search.addEventListener('input', applyFilter);
+
+    document.querySelectorAll('[data-product]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        productInput.value = btn.dataset.product;
+      });
+    });
+  </script>
+</body>
+</html>
