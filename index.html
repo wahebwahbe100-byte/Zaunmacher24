@@ -2823,6 +2823,117 @@
     }
 
 
+
+    /* ============================================================
+       FINAL HERO BOTTOM GAP FIX
+       Removes the black empty space at the bottom of the hero by
+       making the hero image cover the complete hero area.
+       ============================================================ */
+    main#start,
+    .hero-kaiser,
+    .hero-kaiser .hero-slider {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .hero-kaiser {
+      min-height: 100svh !important;
+      height: 100svh !important;
+      overflow: hidden !important;
+      background: #fff !important;
+    }
+
+    .hero-kaiser .hero-slider {
+      position: relative !important;
+      min-height: 100svh !important;
+      height: 100svh !important;
+      max-height: 100svh !important;
+      overflow: hidden !important;
+      background: transparent !important;
+    }
+
+    .hero-kaiser .hero-slide {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      overflow: hidden !important;
+      background: transparent !important;
+    }
+
+    .hero-kaiser .hero-bg {
+      position: absolute !important;
+      inset: -2px !important;
+      width: calc(100% + 4px) !important;
+      height: calc(100% + 4px) !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      opacity: 1 !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+    }
+
+    .hero-kaiser .hero-slide-inner {
+      min-height: 100% !important;
+      height: 100% !important;
+      padding-top: 142px !important;
+      padding-bottom: 74px !important;
+      box-sizing: border-box !important;
+      align-items: center !important;
+    }
+
+    .hero-kaiser .hero-controls {
+      bottom: 18px !important;
+    }
+
+    .hero-kaiser + section {
+      margin-top: 0 !important;
+    }
+
+    @supports not (height: 100svh) {
+      .hero-kaiser,
+      .hero-kaiser .hero-slider {
+        min-height: 100vh !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-kaiser,
+      .hero-kaiser .hero-slider {
+        min-height: 92svh !important;
+        height: 92svh !important;
+        max-height: 92svh !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 112px !important;
+        padding-bottom: 62px !important;
+      }
+
+      .hero-kaiser .hero-controls {
+        bottom: 14px !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-kaiser,
+      .hero-kaiser .hero-slider {
+        min-height: 88svh !important;
+        height: 88svh !important;
+        max-height: 88svh !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 100px !important;
+        padding-bottom: 58px !important;
+      }
+    }
+
+
 </style>
 </head>
 <body>
