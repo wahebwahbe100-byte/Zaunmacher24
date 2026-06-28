@@ -4051,20 +4051,21 @@
 
     /* ============================================================
        MOBILE HERO SIZE TWEAK
-       - Makes the hero slightly taller on phones.
-       - Extends the section downward a bit while keeping the image covered.
+       - Phones only: extends the hero slightly downward.
+       - Keeps desktop/tablet hero sizes unchanged.
        ============================================================ */
     @media (max-width: 760px) {
       .hero-kaiser,
       .hero-kaiser .hero-slider {
-        min-height: 102svh !important;
-        height: 102svh !important;
-        max-height: 102svh !important;
+        min-height: 110svh !important;
+        height: 110svh !important;
+        max-height: 110svh !important;
       }
 
       .hero-kaiser .hero-slide-inner {
+        min-height: 110svh !important;
         padding-top: 116px !important;
-        padding-bottom: 86px !important;
+        padding-bottom: 120px !important;
       }
 
       .hero-kaiser .hero-bg {
@@ -4076,14 +4077,15 @@
     @media (max-width: 420px) {
       .hero-kaiser,
       .hero-kaiser .hero-slider {
-        min-height: 100svh !important;
-        height: 100svh !important;
-        max-height: 100svh !important;
+        min-height: 108svh !important;
+        height: 108svh !important;
+        max-height: 108svh !important;
       }
 
       .hero-kaiser .hero-slide-inner {
+        min-height: 108svh !important;
         padding-top: 104px !important;
-        padding-bottom: 78px !important;
+        padding-bottom: 112px !important;
       }
     }
 
