@@ -4086,6 +4086,182 @@
         padding-bottom: 78px !important;
       }
     }
+
+    .footer-contact { margin-top: 14px; display: grid; gap: 6px; }
+    .footer-contact a { margin-bottom: 0; color: rgba(255,255,255,.78); }
+    .footer-contact span { color: rgba(255,255,255,.62); font-weight: 600; }
+
+
+    /* ============================================================
+       FINAL MOBILE MENU LAYOUT: wide two-column card instead of a narrow vertical list
+       ============================================================ */
+    @media (max-width: 1080px) {
+      body.menu-open {
+        overflow: hidden !important;
+      }
+
+      body.menu-open::before {
+        content: "" !important;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 55 !important;
+        background: rgba(15, 17, 21, .42) !important;
+        pointer-events: auto !important;
+      }
+
+      header {
+        z-index: 140 !important;
+      }
+
+      header .container.nav {
+        position: relative !important;
+        overflow: visible !important;
+      }
+
+      header .container.nav .menu {
+        position: fixed !important;
+        top: 92px !important;
+        left: 16px !important;
+        right: 16px !important;
+        width: auto !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        z-index: 160 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        max-height: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(-12px) scale(.98) !important;
+        background: rgba(255, 255, 255, .97) !important;
+        border: 1px solid rgba(255, 255, 255, .76) !important;
+        border-radius: 26px !important;
+        box-shadow: 0 28px 80px rgba(15, 17, 21, .30) !important;
+        transition:
+          opacity .24s ease,
+          transform .30s ease,
+          visibility .24s ease,
+          max-height .34s ease,
+          padding .24s ease !important;
+      }
+
+      header .container.nav .menu.open {
+        top: 92px !important;
+        max-height: calc(100svh - 112px) !important;
+        padding: 14px !important;
+        overflow-y: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) scale(1) !important;
+      }
+
+      header.is-scrolled .container.nav .menu,
+      header.is-scrolled .container.nav .menu.open {
+        top: 78px !important;
+      }
+
+      header .container.nav .menu a {
+        width: auto !important;
+        min-height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        padding: 14px 15px !important;
+        border-radius: 18px !important;
+        background: #f7f8fa !important;
+        border: 1px solid rgba(47, 53, 66, .09) !important;
+        color: var(--accent) !important;
+        font-size: 15px !important;
+        font-weight: 900 !important;
+        letter-spacing: -.015em !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition:
+          background .2s ease,
+          border-color .2s ease,
+          color .2s ease,
+          transform .2s ease !important;
+      }
+
+      header .container.nav .menu.open a:nth-child(n) {
+        transition-delay: 0s !important;
+      }
+
+      header .container.nav .menu a:hover,
+      header .container.nav .menu a:focus-visible {
+        background: #fff7cc !important;
+        border-color: rgba(255, 204, 0, .55) !important;
+        color: #151922 !important;
+        transform: translateY(-1px) !important;
+      }
+
+      header .container.nav .menu a::after,
+      header .container.nav .menu .nav-products-link::after {
+        content: "›" !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 22px !important;
+        height: 22px !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background: rgba(255, 204, 0, .18) !important;
+        color: var(--brand-dark) !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+      }
+
+      header .container.nav .menu a:last-child {
+        grid-column: 1 / -1 !important;
+        justify-content: center !important;
+        background: var(--brand) !important;
+        border-color: var(--brand) !important;
+        color: #151922 !important;
+        box-shadow: 0 14px 30px rgba(255, 204, 0, .22) !important;
+      }
+
+      header .container.nav .menu a:last-child::after {
+        background: rgba(21, 25, 34, .12) !important;
+        color: #151922 !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header .container.nav .menu,
+      header .container.nav .menu.open {
+        top: 82px !important;
+        left: 12px !important;
+        right: 12px !important;
+        gap: 8px !important;
+        border-radius: 24px !important;
+      }
+
+      header .container.nav .menu.open {
+        padding: 12px !important;
+        max-height: calc(100svh - 98px) !important;
+      }
+
+      header.is-scrolled .container.nav .menu,
+      header.is-scrolled .container.nav .menu.open {
+        top: 66px !important;
+      }
+
+      header .container.nav .menu a {
+        min-height: 54px !important;
+        padding: 12px 12px !important;
+        border-radius: 16px !important;
+        font-size: 14px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -4119,7 +4295,7 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="tel:+490000000000">Anrufen</a>
+        <a class="btn btn-soft" href="tel:+4915141270366">Anrufen</a>
         <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
@@ -4425,9 +4601,9 @@
           <h2>Projekt anfragen</h2>
           <p style="color: var(--muted); margin-top: 14px;">Schreiben Sie kurz, welche Betonsteine Sie interessieren und wo das Projekt umgesetzt werden soll.</p>
           <div class="contact-list">
-            <a href="tel:+490000000000"><span>☎</span><span>+49 000 000000<br><small>Telefonnummer ersetzen</small></span></a>
+            <a href="tel:+4915141270366"><span>☎</span><span>+49 1514 1270366<br><small>Telefon</small></span></a>
             <a href="mailto:info@zaunmacher24.de"><span>✉</span><span>info@zaunmacher24.de<br><small>E-Mail ersetzen</small></span></a>
-            <div><span>⌖</span><span>Deutschland<br><small>Standort / Liefergebiet eintragen</small></span></div>
+            <div><span>⌖</span><span>Rendsburger Landstraße 334<br>24111 Kiel<br><small>Adresse</small></span></div>
           </div>
         </div>
         <form action="mailto:info@zaunmacher24.de" method="post" enctype="text/plain">
@@ -4481,6 +4657,10 @@
             </span>
           </div>
           <p>Betonsteine, Zaunsteine und Zubehör für moderne Außenanlagen.</p>
+          <p class="footer-contact">
+            <a href="tel:+4915141270366">+49 1514 1270366</a>
+            <span>Rendsburger Landstraße 334<br>24111 Kiel</span>
+          </p>
         </div>
         <div>
           <h4>Produkte</h4>
