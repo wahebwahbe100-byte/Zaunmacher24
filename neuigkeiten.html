@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zaunmacher24 Produktseite: 15 JONIEC Produktbereiche mit deutschen Namen, Anfrageformular und ohne Onlinepreise.">
-  <title>Produkte | Zaunmacher24</title>
+  <meta name="description" content="Zaunmacher24 Neuigkeiten: 9 JONIEC Neuheiten mit Bildern, Details und Anfrageformular.">
+  <title>NEUIGKEITEN | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
     * { box-sizing:border-box; }
@@ -1148,6 +1148,9 @@
    NEUIGKEITEN DETAIL PAGE: 9 product cards with image + details
    Opens when the visitor clicks the NEUIGKEITEN card.
    ============================================================ */
+.simple-category-card[data-open-news="true"]::after {
+  content: "Details ansehen →";
+}
 
 .news-section {
   display: none;
@@ -1410,7 +1413,28 @@
 }
 
 
-  </style>
+  
+
+/* Standalone NEUIGKEITEN page overrides */
+.news-section {
+  display: block !important;
+  padding-top: 184px !important;
+}
+.news-section.is-open {
+  display: block !important;
+}
+.news-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .news-section {
+    padding-top: 144px !important;
+  }
+}
+</style>
 </head>
 <body>
   <header>
@@ -1424,11 +1448,12 @@
       </a>
       <nav class="menu" id="menu">
         <a href="index.html">Start</a>
-        <a href="#bilder" class="active-link">Bereiche</a>
+        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="#neuigkeiten" class="active-link">Neuigkeiten</a>
         <a href="#anfrage">Anfrage</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="index.html">Zur Startseite</a>
+        <a class="btn btn-soft" href="produkte.html#bilder">Zu den Bereichen</a>
         <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
@@ -1436,150 +1461,168 @@
   </header>
 
   <main>
-    <section class="hero-products">
-      <div class="container">
-        <p class="kicker">JONIEC Produktbereiche ohne Onlinepreise</p>
-        <h1>15 Bereiche für Zaun, Mauer, Garten & Einfahrt</h1>
-        <p class="lead">Die Seite zeigt 15 Produktbereiche nach der JONIEC® Übersicht. Besucher wählen einen Bereich und können direkt eine individuelle Projektanfrage senden.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#bilder">Bereiche ansehen</a><a class="btn btn-soft" href="#anfrage">Projekt anfragen</a></div>
+    <section id="neuigkeiten" class="news-section is-open">
+  <div class="container">
+    <div class="news-page-shell">
+      <div class="news-page-head">
+        <p class="kicker">NEUIGKEITEN</p>
+        <h2>9 neue Produkte aus dem JONIEC®-Sortiment</h2>
+        <p>Diese Übersicht öffnet sich direkt nach dem Klick auf „NEUIGKEITEN“ und zeigt wie auf der JONIEC®-Seite neun Karten mit Foto, Beschreibung und wichtigsten Details.</p>
+        <div class="news-page-actions">
+          <a class="news-back-btn" href="produkte.html#bilder">← Zurück zu den 15 Bereichen</a>
+          <a class="btn btn-primary" href="#anfrage">Projekt zu Neuigkeiten anfragen</a>
+        </div>
       </div>
-    </section>
-
-    <section id="bilder" style="background:var(--soft)">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Bildbereiche</p>
-            <h2>15 Produktbereiche</h2>
+      <div class="news-grid">
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 01</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Giga Modulare Zäune</h3>
+          <p class="news-desc">ROMA Giga ist eine Neuheit in der Reihe der modularen JONIEC®-Zäune. Schlanke Segmente und ein markantes Design verbinden moderne Ästhetik mit Funktionalität.</p>
+          <ul class="news-detail-list"><li>Block RGM20: H 40 cm / L 50,4 cm / B 19,8 cm</li><li>Vordach CRGM20: H 7,2 cm / L 50,4 cm / B 19,8 cm</li><li>Farben: weiß, grafit, popiel, iryd, sandy</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Giga Modulare Zäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-giga" target="_blank" rel="noopener">Original ansehen</a>
           </div>
-          <p>Die Übersicht wurde auf 15 Bereiche erweitert. Jeder Klick trägt den gewählten Produktbereich automatisch in die Anfrage ein.</p>
         </div>
-
-        <div class="category-overview all-category-cards" id="categoryOverview">
-                    <a class="category-entry-card simple-category-card" href="neuigkeiten.html" data-category-name="NEUIGKEITEN">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp">
-              <img src="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp" alt="NEUIGKEITEN" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 1</span>
-            </span>
-            <strong>NEUIGKEITEN</strong>
-            <small>Zur eigenen Neuigkeiten-Seite mit 9 Produkten, Bildern und Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="modulare-zaeune.html" data-category-name="Modulare Zäune">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp">
-              <img src="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp" alt="Modulare Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 2</span>
-            </span>
-            <strong>Modulare Zäune</strong>
-            <small>Moderne und vielseitige Zaunsysteme mit klarer Linienführung.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="geteilte-zaeune.html" data-category-name="Geteilte Zäune">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp">
-              <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilte Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 3</span>
-            </span>
-            <strong>Geteilte Zäune</strong>
-            <small>Zur eigenen Geteilte-Zäune-Seite mit 3 GORC® Systemen, Bildern und Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="zaunueberspannungen-tore-pforten.html" data-category-name="Zaunüberspannungen, Tore und Pforten.">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/934/b9f5a41ff1733f8d7e1416b3f4cd1166.webp">
-              <img src="https://joniec.de/images/934/b9f5a41ff1733f8d7e1416b3f4cd1166.webp" alt="Zaunüberspannungen, Tore und Pforten." loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 4</span>
-            </span>
-            <strong>Zaunüberspannungen, Tore und Pforten.</strong>
-            <small>Zur eigenen Seite mit Füllungen, Toren, Pforten und Automatik öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="betonelemente-felder.html" data-category-name="Betonelemente/Felder">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1555/7102daa8502dd3233882f08662489581.webp">
-              <img src="https://joniec.de/images/1555/7102daa8502dd3233882f08662489581.webp" alt="Betonelemente/Felder" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 5</span>
-            </span>
-            <strong>Betonelemente/Felder</strong>
-            <small>Zur eigenen KOMBO® Betonelemente-Seite mit Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="fassaden.html" data-category-name="Fassaden">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/970/9019ad621803d9ecd08eca9dd23fcfc5.webp">
-              <img src="https://joniec.de/images/970/9019ad621803d9ecd08eca9dd23fcfc5.webp" alt="Fassaden" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 6</span>
-            </span>
-            <strong>Fassaden</strong>
-            <small>Zur eigenen Fassaden-Seite mit TOM und PIANO öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="vordaecher-beton.html" data-category-name="Vordächer aus Beton">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp">
-              <img src="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp" alt="Vordächer aus Beton" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 7</span>
-            </span>
-            <strong>Vordächer aus Beton</strong>
-            <small>Zur eigenen Vordächer-Seite mit 10 Betonabdeckungen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="buergersteige.html" data-category-name="Bürgersteige">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1393/1f8eb95209919bf9c3a4acec2984ec5c.webp">
-              <img src="https://joniec.de/images/1393/1f8eb95209919bf9c3a4acec2984ec5c.webp" alt="Bürgersteige" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 8</span>
-            </span>
-            <strong>Bürgersteige</strong>
-            <small>Zur eigenen Pflaster-Seite mit Bürgersteigprodukten öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gartenarchitektur.html" data-category-name="Gartenarchitektur">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1158/be4635317977b8cea9c72ee44f154a9f.webp">
-              <img src="https://joniec.de/images/1158/be4635317977b8cea9c72ee44f154a9f.webp" alt="Gartenarchitektur" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 9</span>
-            </span>
-            <strong>Gartenarchitektur</strong>
-            <small>Zur eigenen Gartenarchitektur-Seite mit Palisaden und RIO öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gartenbeleuchtung.html" data-category-name="Gartenbeleuchtung">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1286/9fd98acd13fcdf7ad6014b14ed57d365.webp">
-              <img src="https://joniec.de/images/1286/9fd98acd13fcdf7ad6014b14ed57d365.webp" alt="Gartenbeleuchtung" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 10</span>
-            </span>
-            <strong>Gartenbeleuchtung</strong>
-            <small>Zur eigenen Beleuchtungs-Seite mit LED, Solar und Gartenlampen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="briefkaesten.html" data-category-name="Briefkästen">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/6012/5d3812a30679185bd57ca54d3e94829f.webp">
-              <img src="https://joniec.de/images/6012/5d3812a30679185bd57ca54d3e94829f.webp" alt="Briefkästen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 11</span>
-            </span>
-            <strong>Briefkästen</strong>
-            <small>Zur eigenen Briefkästen-Seite mit 13 Brief- und Paketsystemen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="video-gegensprechanlagen.html" data-category-name="Video-Gegensprechanlagen">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/5439/9e2fd92b77b466ce22b03d25209a8122.webp">
-              <img src="https://joniec.de/images/5439/9e2fd92b77b466ce22b03d25209a8122.webp" alt="Video-Gegensprechanlagen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 12</span>
-            </span>
-            <strong>Video-Gegensprechanlagen</strong>
-            <small>Zur eigenen Video-Gegensprechanlagen-Seite öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="fundamente-anschluesse.html" data-category-name="Fundamente und Anschlüsse">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1199/daa5fc50c19700bc134f0887e0f5ec24.webp">
-              <img src="https://joniec.de/images/1199/daa5fc50c19700bc134f0887e0f5ec24.webp" alt="Fundamente und Anschlüsse" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 13</span>
-            </span>
-            <strong>Fundamente und Anschlüsse</strong>
-            <small>Zur eigenen Fundamente-und-Verbinder-Seite öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="chemie-am-zaun.html" data-category-name="Chemie am Zaun">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/3781/ce7a0730f07cdc0b79d4b643dd5406c4.webp">
-              <img src="https://joniec.de/images/3781/ce7a0730f07cdc0b79d4b643dd5406c4.webp" alt="Chemie am Zaun" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 14</span>
-            </span>
-            <strong>Chemie am Zaun</strong>
-            <small>Zur eigenen Chemie-Seite mit Pflege-, Schutz- und Montageprodukten öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gebaeudezubehoer.html" data-category-name="Gebäudezubehör">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/4295/c955a288af8d571f2c65c3cf25a6cdf3.webp">
-              <img src="https://joniec.de/images/4295/c955a288af8d571f2c65c3cf25a6cdf3.webp" alt="Gebäudezubehör" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 15</span>
-            </span>
-            <strong>Gebäudezubehör</strong>
-            <small>Zur eigenen Zubehör-Seite mit Montagehilfen öffnen.</small>
-          </a>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5286/1f292e94d4c9bb0695cabf5d1b0ba1ed.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 02</span>
         </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Vital ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Vital ECO verbindet modernes Design mit einfacher Montage und geringeren Umsetzungskosten. Die abgeschrägten Kanten betonen den modernen Charakter.</p>
+          <ul class="news-detail-list"><li>Block RVE19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVE19: H 6 cm / L 57 cm / B 19,5 cm</li><li>Farben: weiß, grafit, asche, iridium, calcit</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Modulare Zäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-vital-eco" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5315/8057f4dc02d771787ebee8e25ef6552d.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 03</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Vital ECO Multigrain Modulzäune</h3>
+          <p class="news-desc">Der Multigrain-Effekt verleiht den Blöcken eine dezente körnige Oberfläche. Die innovative Konstruktion reduziert Baukosten und Montagezeit.</p>
+          <ul class="news-detail-list"><li>Block RVEM19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVEM19: H 6 cm / L 57 cm / B 19,5 cm</li><li>Farben: grafit, popiel</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Multigrain Modulzäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-vital-eco-multigrain" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5171/8715dffdc9fc77a0e3a0815434da7b3e.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 04</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Lite Modulare Zäune</h3>
+          <p class="news-desc">ROMA Lite ist ein schlankes modulares Zaunsystem im minimalistischen Stil. Es passt besonders gut zu moderner Architektur.</p>
+          <ul class="news-detail-list"><li>Block RL19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li>Vordach CRL19: H 7,2 cm / L 75,6 cm / B 19,5 cm</li><li>Farben: weiß, grafit, asche</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Lite Modulare Zäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-lite" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5215/d913cdada35413031d3b05e9843b9c00.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 05</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Horizon ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Horizon ECO ist ein ästhetischer und funktioneller Zaun aus JONIEC®-Blöcken, der Betonverbrauch und Montagezeit reduziert.</p>
+          <ul class="news-detail-list"><li>Blöcke RHE20/RHE28 mit passenden Vordächern</li><li>Kostenoptimierte Konstruktion mit kleineren Flutkammern</li><li>Farben: weiß, graphit, asche, calcit, iridium</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Horizon ECO Modulare Zäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-horizon-eco" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5291/5e9d3d46c1c966bfc5260dd0f7ccdae0.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 06</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Integra ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Integra ECO ist ein großformatiger Zaun mit moderner Linienführung. Die Konstruktion senkt den Materialbedarf und wirkt gleichzeitig hochwertig.</p>
+          <ul class="news-detail-list"><li>Block RIE20: H 20 cm / L 75,6 cm / B 19,8 cm</li><li>Vordach CRIE20: H 7,2 cm / L 75,6 cm / B 19,8 cm</li><li>Farben: weiß, grafit, iridium</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Integra ECO Modulare Zäune">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/roma-integra-eco" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/1572/22f2d9f95b312c9d158d5d55f2799e6c.webp" alt="ROMA Horizon Modulzaun" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 07</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Horizon Modulzaun</h3>
+          <p class="news-desc">ROMA Horizon bietet eine neue Farbpalette und erweiterte Blockmaße für noch mehr Gestaltungsmöglichkeiten im modernen Stil.</p>
+          <ul class="news-detail-list"><li>Blöcke BH20, BH36 und BH28</li><li>Viele Farbvarianten wie Amber, Weiß, Graphit, Magnetit, Marengo, Nero, Onyx, Pyrit, Asche</li><li>Passende Vordächer ROMA Horizon verfügbar</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Horizon Modulzaun">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/ogrodzenia-modulowe/ogrodzenia-modulowe-roma-horizon" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilter Zaun GORC® Peak" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 08</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Geteilte Zäune</span>
+          <h3>Geteilter Zaun GORC® Peak</h3>
+          <p class="news-desc">GORC® Peak kombiniert Tradition und Moderne: eine neue Interpretation des klassischen Schieferzauns mit großen Blockformaten.</p>
+          <ul class="news-detail-list"><li>Großes Blockformat für schnelle Montage</li><li>Elemente GPSD, GPMM, GPSM und GPMMP</li><li>Farben: Dark, Onyx, Piryt, Wanad, shade</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilter Zaun GORC® Peak">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/geteilte-zaune/ogrodzenia-lupane-gorc-r-peak" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/1158/be4635317977b8cea9c72ee44f154a9f.webp" alt="STONE Palisades" loading="lazy" decoding="async">
+          <span class="news-badge">Neuheit 09</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Gartenarchitektur</span>
+          <h3>STONE Palisades</h3>
+          <p class="news-desc">Die neue STONE-Palisadenfarbe ist verfügbar. Palisaden ordnen Gartenflächen, schützen Pflanzenbereiche und setzen dekorative Akzente.</p>
+          <ul class="news-detail-list"><li>Palisaden-Elemente wie PL37, PL34, PL19, PL71 und PL75</li><li>Einsatz für Rabatten, Wege, Böschungen und Gartenkanten</li><li>Farben u. a. alaska, bronzyt, czarny, getyt, onyx, piaskowy, piryt</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="STONE Palisades">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.pl/produkty/architektura-ogrodowa/palisady-stone" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
       </div>
-    </section>
-
+      <p class="news-source-note">Hinweis: Die Produktbilder sind als externe JONIEC®-Bildlinks eingebunden. Wenn Sie eigene lokale Bilder nutzen möchten, können Sie die Bildpfade später z. B. auf <code>images/neuigkeiten-01.webp</code> bis <code>images/neuigkeiten-09.webp</code> ändern.</p>
+    </div>
+  </div>
+</section>
 
     <section id="anfrage">
       <div class="container">
@@ -1609,46 +1652,47 @@
             <small class="logo-tagline">ZAUN · TOR · MAUER</small>
           </span>
         </div>
-        <p>© <span id="year"></span> Zaunmacher24 · Produktseite ohne Onlinepreise.</p>
+        <p>© <span id="year"></span> Zaunmacher24 · Neuigkeiten-Seite ohne Onlinepreise.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Start</a>
-        <a href="#bilder">Bereiche</a>
+        <a href="produkte.html#bilder">Bereiche</a>
         <a href="#anfrage">Anfrage</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const pageHeader = document.querySelector('header');
-    const menu = document.getElementById('menu');
-    const toggle = document.getElementById('mobileToggle');
-    const year = document.getElementById('year');
+  
+<script>
+  const pageHeader = document.querySelector('header');
+  const menu = document.getElementById('menu');
+  const toggle = document.getElementById('mobileToggle');
+  const year = document.getElementById('year');
 
-    function updateHeaderState() {
-      if (!pageHeader) return;
-      pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
-    }
+  function updateHeaderState() {
+    if (!pageHeader) return;
+    pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
 
-    updateHeaderState();
-    window.addEventListener('scroll', updateHeaderState, { passive: true });
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
 
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => menu.classList.toggle('open'));
-    }
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  }
 
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-
-document.querySelectorAll('.simple-category-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const productInput = document.getElementById('product');
-    if (productInput) productInput.value = card.dataset.categoryName || '';
-    if (menu) menu.classList.remove('open');
+  document.querySelectorAll('.news-request-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const productInput = document.getElementById('product');
+      if (productInput) productInput.value = button.dataset.productName || 'NEUIGKEITEN';
+      if (menu) menu.classList.remove('open');
+    });
   });
-});
-  </script>
+</script>
+
 </body>
 </html>

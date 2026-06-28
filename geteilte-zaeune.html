@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zaunmacher24 Produktseite: 15 JONIEC Produktbereiche mit deutschen Namen, Anfrageformular und ohne Onlinepreise.">
-  <title>Produkte | Zaunmacher24</title>
+  <meta name="description" content="Zaunmacher24 Geteilte Zäune: JONIEC GORC Systeme mit Bildern, Details und Anfrageformular.">
+  <title>Geteilte Zäune | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
     * { box-sizing:border-box; }
@@ -1148,6 +1148,9 @@
    NEUIGKEITEN DETAIL PAGE: 9 product cards with image + details
    Opens when the visitor clicks the NEUIGKEITEN card.
    ============================================================ */
+.simple-category-card[data-open-news="true"]::after {
+  content: "Details ansehen →";
+}
 
 .news-section {
   display: none;
@@ -1410,7 +1413,28 @@
 }
 
 
-  </style>
+  
+
+/* Standalone MODULARE ZÄUNE page overrides */
+.news-section {
+  display: block !important;
+  padding-top: 184px !important;
+}
+.news-section.is-open {
+  display: block !important;
+}
+.news-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .news-section {
+    padding-top: 144px !important;
+  }
+}
+</style>
 </head>
 <body>
   <header>
@@ -1424,11 +1448,12 @@
       </a>
       <nav class="menu" id="menu">
         <a href="index.html">Start</a>
-        <a href="#bilder" class="active-link">Bereiche</a>
+        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="#geteilte-zaeune" class="active-link">Geteilte Zäune</a>
         <a href="#anfrage">Anfrage</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="index.html">Zur Startseite</a>
+        <a class="btn btn-soft" href="produkte.html#bilder">Zu den Bereichen</a>
         <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
@@ -1436,150 +1461,72 @@
   </header>
 
   <main>
-    <section class="hero-products">
-      <div class="container">
-        <p class="kicker">JONIEC Produktbereiche ohne Onlinepreise</p>
-        <h1>15 Bereiche für Zaun, Mauer, Garten & Einfahrt</h1>
-        <p class="lead">Die Seite zeigt 15 Produktbereiche nach der JONIEC® Übersicht. Besucher wählen einen Bereich und können direkt eine individuelle Projektanfrage senden.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#bilder">Bereiche ansehen</a><a class="btn btn-soft" href="#anfrage">Projekt anfragen</a></div>
+    <section id="geteilte-zaeune" class="news-section is-open">
+  <div class="container">
+    <div class="news-page-shell">
+      <div class="news-page-head">
+        <p class="kicker">GETEILTE ZÄUNE</p>
+        <h2>3 JONIEC® GORC Systeme mit Bildern und Details</h2>
+        <p>Diese eigenständige Seite öffnet sich nach dem Klick auf „Geteilte Zäune“ und zeigt die Produkte aus dem JONIEC® Bereich „Geteilte Zäune“ als übersichtliche Karten mit Foto, Beschreibung und wichtigsten Daten.</p>
+        <div class="news-page-actions">
+          <a class="news-back-btn" href="produkte.html#bilder">← Zurück zu den 15 Bereichen</a>
+          <a class="btn btn-primary" href="#anfrage">Projekt zu geteilten Zäunen anfragen</a>
+        </div>
       </div>
-    </section>
-
-    <section id="bilder" style="background:var(--soft)">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Bildbereiche</p>
-            <h2>15 Produktbereiche</h2>
+      <div class="news-grid">
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
+          <span class="news-badge">System 01</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Geteilte Zäune</span>
+          <h3>Geteilter Zaun GORC® Peak</h3>
+          <p class="news-desc">GORC® Peak verbindet den klassischen Charakter eines Schieferzauns mit großen, modernen Blockformaten. Das System wirkt markant, natürlich und eignet sich sehr gut für moderne Grundstücke.</p>
+          <ul class="news-detail-list"><li>Großes Blockformat für schnelle und klare Montage</li><li>Flexible Gestaltung durch unterschiedliche Pfosten- und Wandelemente</li><li>Farben: Dark, Onyx, Piryt, Wanad, shade</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilter Zaun GORC® Peak">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/geteilte-zaune/ogrodzenia-lupane-gorc-r-peak" target="_blank" rel="noopener">Original ansehen</a>
           </div>
-          <p>Die Übersicht wurde auf 15 Bereiche erweitert. Jeder Klick trägt den gewählten Produktbereich automatisch in die Anfrage ein.</p>
         </div>
-
-        <div class="category-overview all-category-cards" id="categoryOverview">
-                    <a class="category-entry-card simple-category-card" href="neuigkeiten.html" data-category-name="NEUIGKEITEN">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp">
-              <img src="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp" alt="NEUIGKEITEN" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 1</span>
-            </span>
-            <strong>NEUIGKEITEN</strong>
-            <small>Zur eigenen Neuigkeiten-Seite mit 9 Produkten, Bildern und Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="modulare-zaeune.html" data-category-name="Modulare Zäune">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp">
-              <img src="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp" alt="Modulare Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 2</span>
-            </span>
-            <strong>Modulare Zäune</strong>
-            <small>Moderne und vielseitige Zaunsysteme mit klarer Linienführung.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="geteilte-zaeune.html" data-category-name="Geteilte Zäune">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp">
-              <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilte Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 3</span>
-            </span>
-            <strong>Geteilte Zäune</strong>
-            <small>Zur eigenen Geteilte-Zäune-Seite mit 3 GORC® Systemen, Bildern und Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="zaunueberspannungen-tore-pforten.html" data-category-name="Zaunüberspannungen, Tore und Pforten.">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/934/b9f5a41ff1733f8d7e1416b3f4cd1166.webp">
-              <img src="https://joniec.de/images/934/b9f5a41ff1733f8d7e1416b3f4cd1166.webp" alt="Zaunüberspannungen, Tore und Pforten." loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 4</span>
-            </span>
-            <strong>Zaunüberspannungen, Tore und Pforten.</strong>
-            <small>Zur eigenen Seite mit Füllungen, Toren, Pforten und Automatik öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="betonelemente-felder.html" data-category-name="Betonelemente/Felder">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1555/7102daa8502dd3233882f08662489581.webp">
-              <img src="https://joniec.de/images/1555/7102daa8502dd3233882f08662489581.webp" alt="Betonelemente/Felder" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 5</span>
-            </span>
-            <strong>Betonelemente/Felder</strong>
-            <small>Zur eigenen KOMBO® Betonelemente-Seite mit Details öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="fassaden.html" data-category-name="Fassaden">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/970/9019ad621803d9ecd08eca9dd23fcfc5.webp">
-              <img src="https://joniec.de/images/970/9019ad621803d9ecd08eca9dd23fcfc5.webp" alt="Fassaden" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 6</span>
-            </span>
-            <strong>Fassaden</strong>
-            <small>Zur eigenen Fassaden-Seite mit TOM und PIANO öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="vordaecher-beton.html" data-category-name="Vordächer aus Beton">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp">
-              <img src="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp" alt="Vordächer aus Beton" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 7</span>
-            </span>
-            <strong>Vordächer aus Beton</strong>
-            <small>Zur eigenen Vordächer-Seite mit 10 Betonabdeckungen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="buergersteige.html" data-category-name="Bürgersteige">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1393/1f8eb95209919bf9c3a4acec2984ec5c.webp">
-              <img src="https://joniec.de/images/1393/1f8eb95209919bf9c3a4acec2984ec5c.webp" alt="Bürgersteige" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 8</span>
-            </span>
-            <strong>Bürgersteige</strong>
-            <small>Zur eigenen Pflaster-Seite mit Bürgersteigprodukten öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gartenarchitektur.html" data-category-name="Gartenarchitektur">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1158/be4635317977b8cea9c72ee44f154a9f.webp">
-              <img src="https://joniec.de/images/1158/be4635317977b8cea9c72ee44f154a9f.webp" alt="Gartenarchitektur" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 9</span>
-            </span>
-            <strong>Gartenarchitektur</strong>
-            <small>Zur eigenen Gartenarchitektur-Seite mit Palisaden und RIO öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gartenbeleuchtung.html" data-category-name="Gartenbeleuchtung">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1286/9fd98acd13fcdf7ad6014b14ed57d365.webp">
-              <img src="https://joniec.de/images/1286/9fd98acd13fcdf7ad6014b14ed57d365.webp" alt="Gartenbeleuchtung" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 10</span>
-            </span>
-            <strong>Gartenbeleuchtung</strong>
-            <small>Zur eigenen Beleuchtungs-Seite mit LED, Solar und Gartenlampen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="briefkaesten.html" data-category-name="Briefkästen">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/6012/5d3812a30679185bd57ca54d3e94829f.webp">
-              <img src="https://joniec.de/images/6012/5d3812a30679185bd57ca54d3e94829f.webp" alt="Briefkästen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 11</span>
-            </span>
-            <strong>Briefkästen</strong>
-            <small>Zur eigenen Briefkästen-Seite mit 13 Brief- und Paketsystemen öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="video-gegensprechanlagen.html" data-category-name="Video-Gegensprechanlagen">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/5439/9e2fd92b77b466ce22b03d25209a8122.webp">
-              <img src="https://joniec.de/images/5439/9e2fd92b77b466ce22b03d25209a8122.webp" alt="Video-Gegensprechanlagen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 12</span>
-            </span>
-            <strong>Video-Gegensprechanlagen</strong>
-            <small>Zur eigenen Video-Gegensprechanlagen-Seite öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="fundamente-anschluesse.html" data-category-name="Fundamente und Anschlüsse">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/1199/daa5fc50c19700bc134f0887e0f5ec24.webp">
-              <img src="https://joniec.de/images/1199/daa5fc50c19700bc134f0887e0f5ec24.webp" alt="Fundamente und Anschlüsse" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 13</span>
-            </span>
-            <strong>Fundamente und Anschlüsse</strong>
-            <small>Zur eigenen Fundamente-und-Verbinder-Seite öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="chemie-am-zaun.html" data-category-name="Chemie am Zaun">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/3781/ce7a0730f07cdc0b79d4b643dd5406c4.webp">
-              <img src="https://joniec.de/images/3781/ce7a0730f07cdc0b79d4b643dd5406c4.webp" alt="Chemie am Zaun" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 14</span>
-            </span>
-            <strong>Chemie am Zaun</strong>
-            <small>Zur eigenen Chemie-Seite mit Pflege-, Schutz- und Montageprodukten öffnen.</small>
-          </a>
-          <a class="category-entry-card simple-category-card" href="gebaeudezubehoer.html" data-category-name="Gebäudezubehör">
-            <span class="category-entry-image" data-image-name="https://joniec.de/images/4295/c955a288af8d571f2c65c3cf25a6cdf3.webp">
-              <img src="https://joniec.de/images/4295/c955a288af8d571f2c65c3cf25a6cdf3.webp" alt="Gebäudezubehör" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
-              <span>Bereich 15</span>
-            </span>
-            <strong>Gebäudezubehör</strong>
-            <small>Zur eigenen Zubehör-Seite mit Montagehilfen öffnen.</small>
-          </a>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/852/8ba7d1cc1ae37160c1d7da7fdd06d853.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
+          <span class="news-badge">System 02</span>
         </div>
+        <div class="news-body">
+          <span class="news-category">Geteilte Zäune</span>
+          <h3>Geteilte Zäune GORC® de Luxe GL38</h3>
+          <p class="news-desc">GORC® de Luxe GL38 ist eine größere und repräsentative Variante des beliebten GL22 Systems. Es ermöglicht breite Gestaltungsmöglichkeiten und eine elegante Kombination von Pfosten und Fundament.</p>
+          <ul class="news-detail-list"><li>Größeres Gegenstück zum System GL22</li><li>Sehr gut kombinierbar mit GL22-Elementen</li><li>Farben: Alaska, Bronzit, Schwarz, Getit, Onyx, Sand, Pyrit, Silver, Vera</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL38">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/geteilte-zaune/ogrodzenia-lupane-gorc-r-de-luxe-gl38" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/872/9655821af0e1747534b9636778da8c95.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
+          <span class="news-badge">System 03</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Geteilte Zäune</span>
+          <h3>Geteilte Zäune GORC® de Luxe GL22</h3>
+          <p class="news-desc">GORC® de Luxe GL22 ist ein klassisches JONIEC® Spaltzaunsystem mit sichtbaren vertikalen und horizontalen Fugen. Die gespaltete Oberfläche erinnert an Naturstein und verleiht Pfosten und Fundament Charakter.</p>
+          <ul class="news-detail-list"><li>Zweiteilige Blöcke für Pfosten und Blöcke für Wände</li><li>Vorgefräste Kanten machen eine Fuge überflüssig</li><li>Farben: Alaska, Bronzyt, Czarny, Getyt, Onyx, Piaskowy, Piryt, Silver, Vera</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL22">Anfrage vorbereiten</a>
+            <a class="news-source-btn" href="https://joniec.de/Produkte/geteilte-zaune/ogrodzenia-lupane-gorc-r-de-luxe-gl22" target="_blank" rel="noopener">Original ansehen</a>
+          </div>
+        </div>
+      </article>
       </div>
-    </section>
-
+      <p class="news-source-note">Hinweis: Die Produktbilder sind als externe JONIEC®-Bildlinks eingebunden. Wenn Sie eigene lokale Bilder nutzen möchten, können Sie die Bildpfade später z. B. auf <code>images/geteilte-01.webp</code> bis <code>images/geteilte-03.webp</code> ändern.</p>
+    </div>
+  </div>
+</section>
 
     <section id="anfrage">
       <div class="container">
@@ -1609,46 +1556,47 @@
             <small class="logo-tagline">ZAUN · TOR · MAUER</small>
           </span>
         </div>
-        <p>© <span id="year"></span> Zaunmacher24 · Produktseite ohne Onlinepreise.</p>
+        <p>© <span id="year"></span> Zaunmacher24 · Geteilte-Zäune-Seite ohne Onlinepreise.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Start</a>
-        <a href="#bilder">Bereiche</a>
+        <a href="produkte.html#bilder">Bereiche</a>
         <a href="#anfrage">Anfrage</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const pageHeader = document.querySelector('header');
-    const menu = document.getElementById('menu');
-    const toggle = document.getElementById('mobileToggle');
-    const year = document.getElementById('year');
+  
+<script>
+  const pageHeader = document.querySelector('header');
+  const menu = document.getElementById('menu');
+  const toggle = document.getElementById('mobileToggle');
+  const year = document.getElementById('year');
 
-    function updateHeaderState() {
-      if (!pageHeader) return;
-      pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
-    }
+  function updateHeaderState() {
+    if (!pageHeader) return;
+    pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
 
-    updateHeaderState();
-    window.addEventListener('scroll', updateHeaderState, { passive: true });
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
 
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => menu.classList.toggle('open'));
-    }
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  }
 
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-
-document.querySelectorAll('.simple-category-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const productInput = document.getElementById('product');
-    if (productInput) productInput.value = card.dataset.categoryName || '';
-    if (menu) menu.classList.remove('open');
+  document.querySelectorAll('.news-request-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const productInput = document.getElementById('product');
+      if (productInput) productInput.value = button.dataset.productName || 'Geteilte Zäune';
+      if (menu) menu.classList.remove('open');
+    });
   });
-});
-  </script>
+</script>
+
 </body>
 </html>
