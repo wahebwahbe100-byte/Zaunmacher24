@@ -110,6 +110,10 @@
       color: #374151;
     }
     .menu a:hover { color: var(--brand); }
+    .nav-products-link { color: var(--brand) !important; }
+    .nav-products-link::after { content: ""; display: block; height: 2px; background: var(--brand); border-radius: 99px; margin-top: 5px; }
+    @media (max-width: 980px) { .nav-products-link::after { display:none; } }
+    
     .nav-actions { display: flex; align-items: center; gap: 12px; }
     .mobile-toggle {
       display: none;
@@ -756,6 +760,85 @@
       font-size: 14px;
     }
 
+    .sortiment-clean {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 26px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+    .sortiment-clean-copy,
+    .sortiment-mini-card {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      border-radius: 30px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+    .sortiment-clean-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+    }
+    .sortiment-clean-copy p {
+      margin: 0;
+      color: rgba(255,255,255,.74);
+      font-size: 19px;
+      line-height: 1.65;
+      max-width: 640px;
+    }
+    .sortiment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .sortiment-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .sortiment-mini-card {
+      padding: 28px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+    .sortiment-mini-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      width: 90px;
+      height: 90px;
+      border-radius: 28px;
+      background: rgba(227,31,38,.16);
+      transform: rotate(12deg);
+    }
+    .sortiment-mini-card span {
+      position: absolute;
+      top: 24px;
+      left: 28px;
+      color: var(--brand);
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing: .08em;
+    }
+    .sortiment-mini-card h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: -.035em;
+    }
+    .sortiment-mini-card p {
+      margin: 0;
+      color: rgba(255,255,255,.66);
+      line-height: 1.55;
+    }
+
     .split {
       display: grid;
       grid-template-columns: .93fr 1.07fr;
@@ -968,12 +1051,13 @@
       .hero-visual { min-height: 480px; }
       .benefits, .steps { grid-template-columns: repeat(2, 1fr); }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .sortiment-clean { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 680px) {
       .topbar .inner { align-items: flex-start; flex-direction: column; padding: 10px 0; }
       .hero-grid { padding: 52px 0; }
-      .hero-stats, .benefits, .steps, .product-grid, .faq-grid, .form-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats, .benefits, .steps, .product-grid, .sortiment-mini-grid, .faq-grid, .form-grid, .footer-grid { grid-template-columns: 1fr; }
       .hero-visual { min-height: 410px; }
       .wall-card { inset: 0; padding: 18px; border-radius: 26px; }
       .floating-box { left: 18px; right: 18px; width: auto; bottom: 18px; }
@@ -1529,18 +1613,18 @@
         <span><strong>Betonsteine</strong> für Zäune & Mauern</span>
         <span>Beratung · Lieferung · Projektanfrage</span>
       </div>
-      <div>Mo–Sa nach Vereinbarung</div>
+      <div><a href="produkte.html" style="font-weight:800;color:#fff;">Produkte ansehen →</a></div>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a class="logo" href="#start" aria-label="Zaunmacher24 Startseite">
+      <a class="logo" href="index.html" aria-label="Zaunmacher24 Startseite">
         <span class="logo-mark" aria-hidden="true"></span>
         <span>Zaunmacher<span>24</span></span>
       </a>
       <nav class="menu" id="menu">
-        <a href="produkte.html">Produkte</a>
+        <a href="produkte.html" class="nav-products-link">Produkte</a>
         <a href="#vorteile">Vorteile</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#referenzen">Ideen</a>
@@ -1573,9 +1657,9 @@
           <div class="hero-bg" aria-hidden="true"></div>
           <div class="container hero-slide-inner">
             <div class="hero-copy">
-              <p class="kaiser-pretitle">Betonsteine, Zaunsteine & Mauerelemente</p>
-              <h1>Moderne Betonstein-Systeme</h1>
-              <p class="kaiser-subtitle">für moderne Außenanlagen</p>
+              <p class="kaiser-pretitle">Sortiment</p>
+              <h1>Betonsteine &amp; Zubehör</h1>
+              <p class="kaiser-subtitle">für Sichtschutz, Gartenmauer und Einfahrt</p>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="produkte.html">Zum Sortiment</a>
               </div>
@@ -1592,6 +1676,7 @@
               <p class="kaiser-subtitle">Maße, Farben und Zubehör nach Bedarf abgestimmt</p>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
+                <a class="btn btn-outline" href="produkte.html">Produkte ansehen</a>
               </div>
             </div>
           </div>
@@ -1606,6 +1691,7 @@
               <p class="kaiser-subtitle">Senden Sie uns Ihr Projekt – wir prüfen die passende Ausführung</p>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+                <a class="btn btn-outline" href="produkte.html">Zum Produktsortiment</a>
               </div>
             </div>
           </div>
@@ -1666,142 +1752,36 @@
             <p class="section-kicker">Sortiment</p>
             <h2>Betonsteine & Zubehör</h2>
           </div>
-          <p>Wählen Sie eine Kategorie oder suchen Sie nach Produktnamen. Preise werden auf dieser Website bewusst nicht angezeigt.</p>
+          <p>Kurzer Einstieg auf der Startseite. Die ausführliche Übersicht mit Bildern befindet sich auf der Produktseite. Preise werden nicht online angezeigt.</p>
+          <a class="btn btn-primary" href="produkte.html">Produktseite öffnen</a>
         </div>
 
-        <div class="product-toolbar">
-          <div class="filters" aria-label="Produktfilter">
-            <button class="filter-btn active" data-filter="all">Alle</button>
-            <button class="filter-btn" data-filter="zaunsteine">Zaunsteine</button>
-            <button class="filter-btn" data-filter="mauer">Mauer & Fassade</button>
-            <button class="filter-btn" data-filter="fundament">Fundamente</button>
-            <button class="filter-btn" data-filter="garten">Garten</button>
+        <div class="sortiment-clean">
+          <div class="sortiment-clean-copy">
+            <p>Die Startseite zeigt nur den Einstieg in das Sortiment. Die vollständige Übersicht mit Bildern und Produktgruppen ist auf der Produktseite.</p>
+            <div class="sortiment-actions">
+              <a class="btn btn-primary" href="produkte.html">Produktseite öffnen</a>
+              <a class="btn btn-ghost" href="#kontakt">Anfrage senden</a>
+            </div>
           </div>
-          <input class="search-box" id="productSearch" type="search" placeholder="Produkt suchen, z. B. ROMA, GORC, KOMBO..." />
+          <div class="sortiment-mini-grid" aria-label="Sortiment Übersicht">
+            <article class="sortiment-mini-card">
+              <span>01</span>
+              <h3>Betonsteine</h3>
+              <p>Für moderne Zaun-, Mauer- und Sichtschutzlösungen.</p>
+            </article>
+            <article class="sortiment-mini-card">
+              <span>02</span>
+              <h3>Zubehör</h3>
+              <p>Abdeckungen, Fundamente, Verbinder und passende Ergänzungen.</p>
+            </article>
+            <article class="sortiment-mini-card">
+              <span>03</span>
+              <h3>Projektanfrage</h3>
+              <p>Auswahl, Menge und Lieferung werden individuell geprüft.</p>
+            </article>
+          </div>
         </div>
-
-        <div class="product-grid" id="productGrid">
-          <article class="product-card" data-category="zaunsteine" data-name="roma vital eco zaunsteine betonsteine glatt">
-            <div class="product-visual"><span class="badge">Zaunstein</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>ROMA Vital ECO</h3>
-              <p>Glatter Betonstein für moderne Zaunanlagen mit passender Abdeckplatte.</p>
-              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">57 × 19,5 × 20 cm</span><span class="chip">Mehrere Farben</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Vital ECO">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="roma horizon eco zaunsteine betonsteine glatt">
-            <div class="product-visual"><span class="badge">Zaunstein</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>ROMA Horizon ECO</h3>
-              <p>Schlankes System für horizontale Zaun- und Mauerlinien in zeitloser Optik.</p>
-              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">50,4 cm Länge</span><span class="chip">Caps verfügbar</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Horizon ECO">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="roma integra eco betonsteine zaunsteine glatt">
-            <div class="product-visual"><span class="badge">Großformat</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>ROMA Integra ECO</h3>
-              <p>Breiter Betonstein für elegante, ruhige Flächen und reduzierte Fugenwirkung.</p>
-              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">75,6 cm Länge</span><span class="chip">Modern</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Integra ECO">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="roma horizon modular fence betonsteine zaunsteine">
-            <div class="product-visual"><span class="badge">Modular</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>ROMA Horizon</h3>
-              <p>Modulares System mit unterschiedlichen Breiten für Zäune, Pfeiler und Mauern.</p>
-              <div class="product-meta"><span class="chip">Modular</span><span class="chip">20 / 28 / 36 cm</span><span class="chip">Farbauswahl</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Horizon">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="roma mega betonsteine smooth fence">
-            <div class="product-visual"><span class="badge">Massiv</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>ROMA Mega</h3>
-              <p>Massive Elemente für markante Zaun- und Sichtschutzlösungen.</p>
-              <div class="product-meta"><span class="chip">Glatt</span><span class="chip">Großformat</span><span class="chip">Sichtschutz</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="ROMA Mega">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="gorc peak split fence betonsteine gespalten">
-            <div class="product-visual"><span class="badge">Split</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>GORC® Peak</h3>
-              <p>Gespaltene Oberfläche mit Naturstein-Charakter für robuste Zaunanlagen.</p>
-              <div class="product-meta"><span class="chip">Gespalten</span><span class="chip">Natursteinoptik</span><span class="chip">Caps</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="GORC Peak">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="gorc de luxe gl22 gl38 betonsteine split fence">
-            <div class="product-visual"><span class="badge">Premium</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>GORC® de Luxe</h3>
-              <p>Premium-Split-Optik für hochwertige Mauer- und Zaunkombinationen.</p>
-              <div class="product-meta"><span class="chip">GL 22 / GL 38</span><span class="chip">Split</span><span class="chip">Viele Farben</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="GORC de Luxe">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="zaunsteine" data-name="kombo beton elements zaun betonsteine">
-            <div class="product-visual"><span class="badge">System</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>KOMBO®</h3>
-              <p>Betonelemente für moderne Zaunfelder und dekorative Wandlösungen.</p>
-              <div class="product-meta"><span class="chip">Systemelemente</span><span class="chip">Grau / Graphit / Weiß</span><span class="chip">Modern</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="KOMBO">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="mauer" data-name="tom facade blocks fassade mauersteine beton">
-            <div class="product-visual"><span class="badge">Fassade</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>TOM Fassadenblöcke</h3>
-              <p>Gespaltene Fassaden- und Mauerblöcke für Sockel, Wände und Akzente.</p>
-              <div class="product-meta"><span class="chip">Fassade</span><span class="chip">Single-sided split</span><span class="chip">Ecken verfügbar</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="TOM Fassadenblöcke">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="garten" data-name="rio slope blocks hangbefestigung gartenmauer betonsteine">
-            <div class="product-visual"><span class="badge">Garten</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>RIO Hangsteine</h3>
-              <p>Blockelemente für Böschungen, Hangbefestigungen und Gartenmauern.</p>
-              <div class="product-meta"><span class="chip">Slope blocks</span><span class="chip">Garten</span><span class="chip">Caps</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="RIO Hangsteine">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="garten" data-name="mogielica stone palisaden garten beton palisades">
-            <div class="product-visual"><span class="badge">Palisaden</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>MOGIELICA & STONE Palisaden</h3>
-              <p>Betonpalisaden für Beete, Kanten, Höhenversätze und Gartenstruktur.</p>
-              <div class="product-meta"><span class="chip">Palisaden</span><span class="chip">Garten</span><span class="chip">Mehrere Höhen</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="Palisaden">Details anfragen</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="fundament" data-name="prefabricated foundations boards connectors beton fundament zaun">
-            <div class="product-visual"><span class="badge">Fundament</span><div class="block-stack"><span></span><span></span><span></span></div></div>
-            <div class="product-body">
-              <h3>Fundamente & Verbinder</h3>
-              <p>Vorgefertigte Betonfundamente sowie Stahl- und Kunststoffverbinder.</p>
-              <div class="product-meta"><span class="chip">Fundamentplatten</span><span class="chip">Verbinder</span><span class="chip">Zaunmontage</span></div>
-              <a class="btn btn-primary" href="#kontakt" data-product="Fundamente & Verbinder">Details anfragen</a>
-            </div>
-          </article>
-        </div>
-        <p class="product-note">Hinweis: Produktnamen, Maße und Farbbezeichnungen dienen der Orientierung. Verfügbarkeit, technische Details und Liefermöglichkeiten werden individuell bestätigt.</p>
       </div>
     </section>
 
@@ -2054,6 +2034,7 @@
 
     let currentFilter = 'all';
     function applyFilter() {
+      if (!search || !cards.length) return;
       const term = search.value.trim().toLowerCase();
       cards.forEach(card => {
         const matchCategory = currentFilter === 'all' || card.dataset.category === currentFilter;
@@ -2062,15 +2043,17 @@
       });
     }
 
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        applyFilter();
+    if (search && filters.length && cards.length) {
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          applyFilter();
+        });
       });
-    });
-    search.addEventListener('input', applyFilter);
+      search.addEventListener('input', applyFilter);
+    }
 
     document.querySelectorAll('[data-product]').forEach(btn => {
       btn.addEventListener('click', () => {
