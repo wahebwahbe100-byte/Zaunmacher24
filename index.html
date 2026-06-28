@@ -2710,6 +2710,119 @@
       }
     }
 
+
+    /* ============================================================
+       FINAL LOGO TAGLINE: ZAUN · TOR · MAUER under wordmark
+       ============================================================ */
+    header .logo .logo-wordmark,
+    footer .logo .logo-wordmark {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: max-content !important;
+      height: auto !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+      transform: translateY(1px) !important;
+      flex: 0 0 auto !important;
+    }
+
+    header .logo .logo-wordmark > .logo-text {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #2f3542 !important;
+      font-size: 26px !important;
+      font-weight: 950 !important;
+      line-height: .95 !important;
+      letter-spacing: -.045em !important;
+      white-space: nowrap !important;
+    }
+
+    header .logo .logo-wordmark > .logo-text span {
+      color: #ffcc00 !important;
+    }
+
+    header .logo .logo-tagline {
+      display: block !important;
+      margin: 2px 0 0 1px !important;
+      padding: 0 !important;
+      color: #7b818c !important;
+      font-size: 10.5px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      letter-spacing: .28em !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+    }
+
+    footer .logo .logo-wordmark > .logo-text {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #fff !important;
+      font-size: 34px !important;
+      font-weight: 950 !important;
+      line-height: .95 !important;
+      letter-spacing: -.065em !important;
+      white-space: nowrap !important;
+    }
+
+    footer .logo .logo-wordmark > .logo-text span {
+      color: #ffcc00 !important;
+    }
+
+    footer .logo .logo-tagline {
+      display: block !important;
+      margin: 4px 0 0 2px !important;
+      padding: 0 !important;
+      color: rgba(255,255,255,.64) !important;
+      font-size: 11px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      letter-spacing: .30em !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 1080px) {
+      header .logo .logo-wordmark > .logo-text {
+        font-size: 23px !important;
+      }
+      header .logo .logo-tagline {
+        font-size: 9px !important;
+        letter-spacing: .22em !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header .logo {
+        gap: 7px !important;
+      }
+      header .logo .logo-wordmark > .logo-text {
+        font-size: 19px !important;
+      }
+      header .logo .logo-tagline {
+        margin-top: 1px !important;
+        font-size: 7.4px !important;
+        letter-spacing: .16em !important;
+      }
+      footer .logo .logo-wordmark > .logo-text {
+        font-size: 24px !important;
+      }
+      footer .logo .logo-tagline {
+        font-size: 8px !important;
+        letter-spacing: .20em !important;
+      }
+    }
+
+
 </style>
 </head>
 <body>
@@ -2727,7 +2840,10 @@
     <div class="container nav">
       <a class="logo" href="index.html" aria-label="Zaunmacher24 Startseite">
         <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
-        <span class="logo-text">zaunmacher<span>24</span></span>
+        <span class="logo-wordmark">
+          <span class="logo-text">zaunmacher<span>24</span></span>
+          <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+        </span>
       </a>
       <nav class="menu" id="menu">
         <a href="produkte.html" class="nav-products-link">Produkte</a>
@@ -3025,7 +3141,13 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="logo" style="color:#fff; margin-bottom:12px;"><img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true"><span class="logo-text">zaunmacher<span>24</span></span></div>
+          <div class="logo" style="color:#fff; margin-bottom:12px;">
+            <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+            <span class="logo-wordmark">
+              <span class="logo-text">zaunmacher<span>24</span></span>
+              <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+            </span>
+          </div>
           <p>Betonsteine, Zaunsteine und Zubehör für moderne Außenanlagen.</p>
         </div>
         <div>
