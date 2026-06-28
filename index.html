@@ -1998,6 +1998,102 @@
       }
     }
 
+
+    /* ============================================================
+       FINAL FIX: make the gate logo image large and clearly visible
+       Only logo/header/footer sizing is changed.
+       ============================================================ */
+    header .nav {
+      min-height: 96px !important;
+    }
+
+    header .logo {
+      gap: 22px !important;
+      height: 96px !important;
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    header .logo .logo-mark {
+      width: 230px !important;
+      height: 82px !important;
+      flex: 0 0 230px !important;
+      display: block !important;
+      border-radius: 0 !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      image-rendering: auto !important;
+    }
+
+    header .logo .logo-mark::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    header .logo > span:not(.logo-mark) {
+      display: inline-block !important;
+      color: var(--accent) !important;
+      font-size: 32px !important;
+      font-weight: 950 !important;
+      line-height: 1 !important;
+      letter-spacing: -.055em !important;
+      white-space: nowrap !important;
+    }
+
+    header .logo > span:not(.logo-mark) span {
+      color: var(--brand) !important;
+    }
+
+    footer .logo .logo-mark {
+      width: 220px !important;
+      height: 78px !important;
+      flex: 0 0 220px !important;
+      display: block !important;
+      border-radius: 0 !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    @media (max-width: 1180px) {
+      header .logo { gap: 14px !important; }
+      header .logo .logo-mark {
+        width: 190px !important;
+        height: 70px !important;
+        flex-basis: 190px !important;
+      }
+      header .logo > span:not(.logo-mark) { font-size: 28px !important; }
+      .menu { gap: 16px !important; }
+    }
+
+    @media (max-width: 980px) {
+      header .nav { min-height: 86px !important; }
+      header .logo { height: 86px !important; }
+      header .logo .logo-mark {
+        width: 210px !important;
+        height: 74px !important;
+        flex-basis: 210px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header .nav { min-height: 76px !important; }
+      header .logo { gap: 10px !important; height: 76px !important; }
+      header .logo .logo-mark {
+        width: 155px !important;
+        height: 56px !important;
+        flex-basis: 155px !important;
+      }
+      header .logo > span:not(.logo-mark) {
+        font-size: 24px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
