@@ -4047,7 +4047,46 @@
       }
     }
 
-  </style>
+  
+
+    /* ============================================================
+       MOBILE HERO SIZE TWEAK
+       - Makes the hero slightly taller on phones.
+       - Extends the section downward a bit while keeping the image covered.
+       ============================================================ */
+    @media (max-width: 760px) {
+      .hero-kaiser,
+      .hero-kaiser .hero-slider {
+        min-height: 102svh !important;
+        height: 102svh !important;
+        max-height: 102svh !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 116px !important;
+        padding-bottom: 86px !important;
+      }
+
+      .hero-kaiser .hero-bg {
+        background-size: cover !important;
+        background-position: center center !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-kaiser,
+      .hero-kaiser .hero-slider {
+        min-height: 100svh !important;
+        height: 100svh !important;
+        max-height: 100svh !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 104px !important;
+        padding-bottom: 78px !important;
+      }
+    }
+</style>
 </head>
 <body>
   <div class="topbar">
