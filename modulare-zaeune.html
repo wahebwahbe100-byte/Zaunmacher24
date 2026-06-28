@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zaunmacher24 Modulare Zäune: JONIEC ROMA Systeme mit Bildern, Details und Anfrageformular.">
+  
+  <!-- Font matched from uploaded index page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="description" content="Zaunmacher24 Modulare Zäune: JONIEC ROMA Systeme mit Bildern, Details und Anfrageformular.">
   <title>Modulare Zäune | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
@@ -778,8 +783,6 @@
       }
     }
 
-
-
     /* ============================================================
        15 IMAGE PRODUCT OVERVIEW
        Visitor sees all 15 JONIEC product-category images in one clean
@@ -990,8 +993,6 @@
       }
     }
 
-
-
     /* ============================================================
        FINAL: 15 CATEGORY IMAGES
        This section shows the 15 product-category cards based on
@@ -1029,13 +1030,10 @@
       }
     }
 
-
-
     /* Final cleanup after extending product categories */
     #bilder {
       padding-top: 92px !important;
     }
-
 
     /* ============================================================
        IMAGE FIX: all 15 category photos show correctly like cards
@@ -1128,7 +1126,6 @@
     .category-entry-image.image-missing::after {
       background: linear-gradient(to top, rgba(17,22,29,.20), rgba(17,22,29,.02));
     }
-
 
 /* ============================================================
    NEUIGKEITEN DETAIL PAGE: 9 product cards with image + details
@@ -1398,9 +1395,6 @@
   }
 }
 
-
-  
-
 /* Standalone MODULARE ZÄUNE page overrides */
 .news-section {
   display: block !important;
@@ -1421,7 +1415,6 @@
   }
 }
 
-
 /* Local image + matte colour swatches cleanup */
 .news-badge { display:none !important; }
 .color-list-item { display:block !important; padding-left:0 !important; }
@@ -1431,6 +1424,98 @@
 .color-dot { width:34px; height:34px; border-radius:50%; background:var(--c); border:1px solid rgba(21,25,34,.18); box-shadow:none; display:inline-block; }
 .color-dot[title*="weiß"], .color-dot[title*="Weiß"], .color-dot[title*="white"], .color-dot[title*="White"], .color-dot[title*="alaska"], .color-dot[title*="Snow"] { border-color:rgba(21,25,34,.24); }
 .news-image img[src$=".webp"], .product-image img[src$=".webp"] { background:#eef0f3; }
+
+/* Final clean hero and visible text cleanup */
+.page-head,
+.news-page-head {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: clamp(340px, 40vw, 520px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  isolation: isolate !important;
+  background-image:
+    linear-gradient(90deg, rgba(17,22,29,.92) 0%, rgba(17,22,29,.76) 46%, rgba(17,22,29,.34) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+.page-head::after,
+.news-page-head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,204,0,.20), transparent 28%),
+    linear-gradient(to top, rgba(17,22,29,.35), transparent 48%);
+  pointer-events: none;
+}
+.page-head > *,
+.news-page-head > * {
+  position: relative;
+  z-index: 1;
+}
+.product-category,
+.news-category,
+.product-group {
+  display: none !important;
+}
+.product-image::before,
+.news-image::before,
+.category-entry-image::before {
+  content: none !important;
+  display: none !important;
+}
+.product-image,
+.news-image,
+.category-entry-image {
+  background: #e6e8ec !important;
+}
+@media (max-width: 760px) {
+  .page-head,
+  .news-page-head {
+    min-height: 320px !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* ============================================================
+   FONT MATCH FROM INDEX PAGE
+   تم توحيد الخط فقط بدون تغيير الألوان أو التصميم.
+   ============================================================ */
+html,
+body,
+button,
+input,
+textarea,
+select,
+a,
+p,
+span,
+small,
+strong,
+label,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.menu,
+.logo,
+.logo-text,
+.logo-tagline,
+.product-card,
+.news-card,
+.category-entry-card {
+  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
 
 </style>
 </head>
@@ -1446,12 +1531,12 @@
       </a>
       <nav class="menu" id="menu">
         <a href="index.html">Start</a>
-        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="Systeme.html#bilder">Bereiche</a>
         <a href="#modulare-zaeune" class="active-link">Modulare Zäune</a>
         <a href="#anfrage">Anfrage</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="produkte.html#bilder">Zu den Bereichen</a>
+        <a class="btn btn-soft" href="Systeme.html#bilder">Zu den Bereichen</a>
         <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
@@ -1462,13 +1547,13 @@
     <section id="modulare-zaeune" class="news-section is-open">
   <div class="container">
     <div class="news-page-shell">
-      <div class="news-page-head">
+      <div class="news-page-head" style="--hero-image:url('images/modulare-zaeune-roma-nova.webp')">
         <p class="kicker">MODULARE ZÄUNE</p>
-        <h2>10 JONIEC® ROMA Systeme mit Bildern und Details</h2>
-        <p>Diese eigenständige Seite öffnet sich nach dem Klick auf „Modulare Zäune“ und zeigt die Produkte aus dem JONIEC® Bereich „Ogrodzenia modułowe“ als übersichtliche Karten mit Foto, Beschreibung und wichtigsten Daten.</p>
+        <h2>JONIEC® ROMA Systeme für moderne Zaunanlagen</h2>
+        <p>Eine klare Übersicht der passenden Systeme mit Foto, Beschreibung und den wichtigsten Daten für Ihre Anfrage.</p>
         <div class="news-page-actions">
-          <a class="news-back-btn" href="produkte.html#bilder">← Zurück zu den 15 Bereichen</a>
-          <a class="btn btn-primary" href="#anfrage">Projekt zu modularen Zäunen anfragen</a>
+          <a class="news-back-btn" href="Systeme.html#bilder">← Zurück zu den 15 Bereichen</a>
+          <a class="btn btn-primary" href="#anfrage">Projekt anfragen</a>
         </div>
       </div>
       <div class="news-grid">
@@ -1477,13 +1562,10 @@
           <img src="images/modulare-zaeune-roma-nova.webp" alt="Modulare Zäune ROMA Nova" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>Modulare Zäune ROMA Nova</h3>
+<h3>Modulare Zäune ROMA Nova</h3>
           <p class="news-desc">ROMA Nova ist ein modernes System aus massiven Betonsteinen. Das innovative Aussehen, die klare Form und die SCRATCH-Oberfläche geben dem Grundstück einen besonderen Charakter.</p>
           <ul class="news-detail-list"><li>System ROMA Nova mit moderner Blockform</li><li>Komponente RN19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#c3c1b9" title="Szerlit" aria-label="Szerlit"></span><span class="color-dot" style="--c:#4f5e4f" title="Uran" aria-label="Uran"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Nova">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1491,13 +1573,10 @@
           <img src="images/roma-horizon-eco-modulare-zaeune.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Horizon ECO Modulare Zäune</h3>
+<h3>ROMA Horizon ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Horizon ECO ist ein ästhetischer und funktioneller Zaun aus JONIEC®-Blöcken. Die Konstruktion reduziert Betonverbrauch, Montagezeit und Kosten.</p>
           <ul class="news-detail-list"><li>Blöcke RHE20/RHE28 mit passenden Vordächern</li><li>Konstruktion mit kleineren Flutkammern</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#f3f3ee" title="weiß" aria-label="weiß"></span><span class="color-dot" style="--c:#2e3438" title="graphit" aria-label="graphit"></span><span class="color-dot" style="--c:#b4b0a9" title="asche" aria-label="asche"></span><span class="color-dot" style="--c:#ddd6ca" title="calcit" aria-label="calcit"></span><span class="color-dot" style="--c:#77746d" title="iridium" aria-label="iridium"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Horizon ECO Modulare Zäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1505,13 +1584,10 @@
           <img src="images/modulare-zaeune-roma-mega.webp" alt="Modulare Zäune ROMA Mega" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>Modulare Zäune ROMA Mega</h3>
+<h3>Modulare Zäune ROMA Mega</h3>
           <p class="news-desc">ROMA Mega ist für exklusive, moderne Formen gedacht. Große Betonblöcke ermöglichen eine schnelle Errichtung massiver und repräsentativer Zaunanlagen.</p>
           <ul class="news-detail-list"><li>Großformatige Blöcke RM28 und RM19</li><li>RM28: H 28,8 cm / L 75,6 cm / B 28 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#b18862" title="Aragon" aria-label="Aragon"></span><span class="color-dot" style="--c:#6a6256" title="Gabro" aria-label="Gabro"></span><span class="color-dot" style="--c:#777a7d" title="Galena" aria-label="Galena"></span><span class="color-dot" style="--c:#343536" title="Lidyt" aria-label="Lidyt"></span><span class="color-dot" style="--c:#534d48" title="Turmalin" aria-label="Turmalin"></span><span class="color-dot" style="--c:#f7f7f3" title="Snow" aria-label="Snow"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Mega">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1519,13 +1595,10 @@
           <img src="images/roma-vital-eco-modulare-zaeune.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Vital ECO Modulare Zäune</h3>
+<h3>ROMA Vital ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Vital ECO verbindet modernes Design mit einfacher Montage und geringeren Kosten. Abgeschrägte Kanten unterstreichen den modernen Charakter.</p>
           <ul class="news-detail-list"><li>Block RVE19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVE19: H 6 cm / L 57 cm / B 19,5 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#f3f3ee" title="weiß" aria-label="weiß"></span><span class="color-dot" style="--c:#2e3438" title="grafit" aria-label="grafit"></span><span class="color-dot" style="--c:#b4b0a9" title="asche" aria-label="asche"></span><span class="color-dot" style="--c:#77746d" title="iridium" aria-label="iridium"></span><span class="color-dot" style="--c:#ddd6ca" title="calcit" aria-label="calcit"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Modulare Zäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1533,13 +1606,10 @@
           <img src="images/modulare-zaeune-roma-horizon.webp" alt="Modulare Zäune ROMA Horizon" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>Modulare Zäune ROMA Horizon</h3>
+<h3>Modulare Zäune ROMA Horizon</h3>
           <p class="news-desc">ROMA Horizon zeichnet sich durch elegantes Design und eine einfache, schnelle Montage aus. Die Farbpalette eignet sich für warme und kühle Fassadentöne.</p>
           <ul class="news-detail-list"><li>Blöcke BH20, BH36 und BH28</li><li>Passende Vordächer ROMA Horizon verfügbar</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#b78345" title="Amber" aria-label="Amber"></span><span class="color-dot" style="--c:#f3f3ee" title="Weiß" aria-label="Weiß"></span><span class="color-dot" style="--c:#2e3438" title="Graphit" aria-label="Graphit"></span><span class="color-dot" style="--c:#44464a" title="Magnetit" aria-label="Magnetit"></span><span class="color-dot" style="--c:#3f4448" title="Marengo" aria-label="Marengo"></span><span class="color-dot" style="--c:#151515" title="Nero" aria-label="Nero"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#8a7a5b" title="Pyrit" aria-label="Pyrit"></span><span class="color-dot" style="--c:#b4b0a9" title="Asche" aria-label="Asche"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Horizon">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1547,13 +1617,10 @@
           <img src="images/roma-vital-eco-multigrain-modulzaeune.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Vital ECO Multigrain Modulzäune</h3>
+<h3>ROMA Vital ECO Multigrain Modulzäune</h3>
           <p class="news-desc">Der Multigrain-Effekt verleiht den Blöcken eine dezente körnige Oberfläche. Die ECO-Konstruktion reduziert Materialverbrauch und Montagezeit.</p>
           <ul class="news-detail-list"><li>Block RVEM19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVEM19: H 6 cm / L 57 cm / B 19,5 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#2e3438" title="grafit" aria-label="grafit"></span><span class="color-dot" style="--c:#b8b8b1" title="popiel" aria-label="popiel"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Multigrain Modulzäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1561,13 +1628,10 @@
           <img src="images/modulare-zaeune-roma-perfect.webp" alt="Modulare Zäune ROMA Perfect" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>Modulare Zäune ROMA Perfect</h3>
+<h3>Modulare Zäune ROMA Perfect</h3>
           <p class="news-desc">ROMA Perfect ist für Liebhaber einer rohen, asketischen Ästhetik gemacht. Die SCRATCH-Technologie sorgt für eine unregelmäßige, steinartige Oberfläche.</p>
           <ul class="news-detail-list"><li>SCRATCH-Oberfläche mit unregelmäßiger Struktur</li><li>Komponente RP20: H 20 cm / L 50,4 cm / B 20 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#eeeeea" title="Alba" aria-label="Alba"></span><span class="color-dot" style="--c:#6d6d68" title="Dioryt" aria-label="Dioryt"></span><span class="color-dot" style="--c:#b0a28d" title="Milos" aria-label="Milos"></span><span class="color-dot" style="--c:#3a3936" title="Morion" aria-label="Morion"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Perfect">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1575,13 +1639,10 @@
           <img src="images/roma-integra-eco-modulare-zaeune.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Integra ECO Modulare Zäune</h3>
+<h3>ROMA Integra ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Integra ECO ist ein stilvoller großformatiger Zaun. Die langen Elemente und abgeschrägten Kanten schaffen eine ruhige, moderne Linie.</p>
           <ul class="news-detail-list"><li>Block RIE20: H 20 cm / L 75,6 cm / B 19,8 cm</li><li>Vordach CRIE20: H 7,2 cm / L 75,6 cm / B 19,8 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#f3f3ee" title="weiß" aria-label="weiß"></span><span class="color-dot" style="--c:#2e3438" title="grafit" aria-label="grafit"></span><span class="color-dot" style="--c:#77746d" title="iridium" aria-label="iridium"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Integra ECO Modulare Zäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1589,13 +1650,10 @@
           <img src="images/geteilte-zaeune-hintergrund.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Giga Modulare Zäune</h3>
+<h3>ROMA Giga Modulare Zäune</h3>
           <p class="news-desc">ROMA Giga ist eine Neuheit im Bereich modularer JONIEC®-Zäune. Markante Segmente verbinden minimalistische Optik mit hoher Funktionalität.</p>
           <ul class="news-detail-list"><li>Block RGM20: H 40 cm / L 50,4 cm / B 19,8 cm</li><li>Vordach CRGM20: H 7,2 cm / L 50,4 cm / B 19,8 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#f3f3ee" title="weiß" aria-label="weiß"></span><span class="color-dot" style="--c:#2e3438" title="grafit" aria-label="grafit"></span><span class="color-dot" style="--c:#b8b8b1" title="popiel" aria-label="popiel"></span><span class="color-dot" style="--c:#77746d" title="iryd" aria-label="iryd"></span><span class="color-dot" style="--c:#d7c2a3" title="sandy" aria-label="sandy"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Giga Modulare Zäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1603,34 +1661,30 @@
           <img src="images/roma-lite-modulare-zaeune.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Modulare Zäune</span>
-          <h3>ROMA Lite Modulare Zäune</h3>
+<h3>ROMA Lite Modulare Zäune</h3>
           <p class="news-desc">ROMA Lite ist ein schlankes modulares Zaunsystem mit minimalistischem Stil. Es passt sehr gut zu moderner Architektur und gedeckten Farben.</p>
           <ul class="news-detail-list"><li>Block RL19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li>Vordach CRL19: H 7,2 cm / L 75,6 cm / B 19,5 cm</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#f3f3ee" title="weiß" aria-label="weiß"></span><span class="color-dot" style="--c:#2e3438" title="grafit" aria-label="grafit"></span><span class="color-dot" style="--c:#b4b0a9" title="asche" aria-label="asche"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Lite Modulare Zäune">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       </div>
-      <p class="news-source-note">Hinweis: Die Produktbilder wurden auf lokale Bildpfade umgestellt. Lokale Bildpfade befinden sich im Ordner auf <code>images/modulare-01.webp</code> bis <code>images/modulare-10.webp</code> ändern.</p>
-    </div>
+</div>
   </div>
 </section>
 
     <section id="anfrage">
       <div class="container">
-        <div class="contact-band"><div><p class="kicker">Anfrage</p><h2>Projekt individuell kalkulieren lassen</h2><p>Senden Sie Produkt, Menge, Länge, Höhe, Lieferort und Fotos vom Projektort. Danach kann ein Angebot vorbereitet werden.</p></div><a class="btn btn-primary" href="mailto:info@zaunmacher24.de">info@zaunmacher24.de</a></div>
+        <div class="contact-band"><div><p class="kicker">Anfrage</p><h2>JONIEC® ROMA Systeme für moderne Zaunanlagen</h2><p>Senden Sie System, Menge, Länge, Höhe, Lieferort und Fotos vom Projektort. Danach kann ein Angebot vorbereitet werden.</p></div><a class="btn btn-primary" href="mailto:info@zaunmacher24.de">info@zaunmacher24.de</a></div>
         <form class="form-wrap" action="mailto:info@zaunmacher24.de" method="post" enctype="text/plain">
           <div class="form-grid">
             <div class="field"><label for="name">Name</label><input id="name" name="Name" required placeholder="Ihr Name"></div>
             <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" placeholder="Telefonnummer"></div>
             <div class="field"><label for="email">E-Mail</label><input id="email" name="Email" type="email" required placeholder="E-Mail-Adresse"></div>
             <div class="field"><label for="area">Lieferort</label><input id="area" name="Lieferort" placeholder="PLZ / Ort"></div>
-            <div class="field full"><label for="product">Produkt</label><input id="product" name="Produkt" placeholder="Produkt wird per Klick automatisch eingetragen"></div>
+            <div class="field full"><label for="product">Auswahl</label><input id="product" name="Auswahl" placeholder="Auswahl wird per Klick automatisch eingetragen"></div>
             <div class="field full"><label for="message">Nachricht</label><textarea id="message" name="Nachricht" placeholder="Bitte Maße, Länge, Höhe, Farbe, gewünschtes System und Lieferadresse beschreiben."></textarea></div>
           </div>
-          <button class="btn btn-primary" type="submit" style="margin-top:18px">Anfrage vorbereiten</button>
+          
         </form>
       </div>
     </section>
@@ -1650,13 +1704,12 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Start</a>
-        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="Systeme.html#bilder">Bereiche</a>
         <a href="#anfrage">Anfrage</a>
       </div>
     </div>
   </footer>
 
-  
 <script>
   const pageHeader = document.querySelector('header');
   const menu = document.getElementById('menu');
@@ -1682,7 +1735,7 @@
   document.querySelectorAll('.news-request-btn').forEach(button => {
     button.addEventListener('click', () => {
       const productInput = document.getElementById('product');
-      if (productInput) productInput.value = button.dataset.productName || 'Modulare Zäune';
+      if (productInput) productInput.value = button.dataset.selectionName || 'Modulare Zäune';
       if (menu) menu.classList.remove('open');
     });
   });

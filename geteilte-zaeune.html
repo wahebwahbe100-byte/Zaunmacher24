@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zaunmacher24 Geteilte Zäune: JONIEC GORC Systeme mit Bildern, Details und Anfrageformular.">
+  
+  <!-- Font matched from uploaded index page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="description" content="Zaunmacher24 Geteilte Zäune: JONIEC GORC Systeme mit Bildern, Details und Anfrageformular.">
   <title>Geteilte Zäune | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
@@ -778,8 +783,6 @@
       }
     }
 
-
-
     /* ============================================================
        15 IMAGE PRODUCT OVERVIEW
        Visitor sees all 15 JONIEC product-category images in one clean
@@ -990,8 +993,6 @@
       }
     }
 
-
-
     /* ============================================================
        FINAL: 15 CATEGORY IMAGES
        This section shows the 15 product-category cards based on
@@ -1029,13 +1030,10 @@
       }
     }
 
-
-
     /* Final cleanup after extending product categories */
     #bilder {
       padding-top: 92px !important;
     }
-
 
     /* ============================================================
        IMAGE FIX: all 15 category photos show correctly like cards
@@ -1128,7 +1126,6 @@
     .category-entry-image.image-missing::after {
       background: linear-gradient(to top, rgba(17,22,29,.20), rgba(17,22,29,.02));
     }
-
 
 /* ============================================================
    NEUIGKEITEN DETAIL PAGE: 9 product cards with image + details
@@ -1398,9 +1395,6 @@
   }
 }
 
-
-  
-
 /* Standalone MODULARE ZÄUNE page overrides */
 .news-section {
   display: block !important;
@@ -1421,7 +1415,6 @@
   }
 }
 
-
 /* Local image + matte colour swatches cleanup */
 .news-badge { display:none !important; }
 .color-list-item { display:block !important; padding-left:0 !important; }
@@ -1431,6 +1424,98 @@
 .color-dot { width:34px; height:34px; border-radius:50%; background:var(--c); border:1px solid rgba(21,25,34,.18); box-shadow:none; display:inline-block; }
 .color-dot[title*="weiß"], .color-dot[title*="Weiß"], .color-dot[title*="white"], .color-dot[title*="White"], .color-dot[title*="alaska"], .color-dot[title*="Snow"] { border-color:rgba(21,25,34,.24); }
 .news-image img[src$=".webp"], .product-image img[src$=".webp"] { background:#eef0f3; }
+
+/* Final clean hero and visible text cleanup */
+.page-head,
+.news-page-head {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: clamp(340px, 40vw, 520px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  isolation: isolate !important;
+  background-image:
+    linear-gradient(90deg, rgba(17,22,29,.92) 0%, rgba(17,22,29,.76) 46%, rgba(17,22,29,.34) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+.page-head::after,
+.news-page-head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,204,0,.20), transparent 28%),
+    linear-gradient(to top, rgba(17,22,29,.35), transparent 48%);
+  pointer-events: none;
+}
+.page-head > *,
+.news-page-head > * {
+  position: relative;
+  z-index: 1;
+}
+.product-category,
+.news-category,
+.product-group {
+  display: none !important;
+}
+.product-image::before,
+.news-image::before,
+.category-entry-image::before {
+  content: none !important;
+  display: none !important;
+}
+.product-image,
+.news-image,
+.category-entry-image {
+  background: #e6e8ec !important;
+}
+@media (max-width: 760px) {
+  .page-head,
+  .news-page-head {
+    min-height: 320px !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* ============================================================
+   FONT MATCH FROM INDEX PAGE
+   تم توحيد الخط فقط بدون تغيير الألوان أو التصميم.
+   ============================================================ */
+html,
+body,
+button,
+input,
+textarea,
+select,
+a,
+p,
+span,
+small,
+strong,
+label,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.menu,
+.logo,
+.logo-text,
+.logo-tagline,
+.product-card,
+.news-card,
+.category-entry-card {
+  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
 
 </style>
 </head>
@@ -1446,12 +1531,12 @@
       </a>
       <nav class="menu" id="menu">
         <a href="index.html">Start</a>
-        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="Systeme.html#bilder">Bereiche</a>
         <a href="#geteilte-zaeune" class="active-link">Geteilte Zäune</a>
         <a href="#anfrage">Anfrage</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="produkte.html#bilder">Zu den Bereichen</a>
+        <a class="btn btn-soft" href="Systeme.html#bilder">Zu den Bereichen</a>
         <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
@@ -1462,13 +1547,13 @@
     <section id="geteilte-zaeune" class="news-section is-open">
   <div class="container">
     <div class="news-page-shell">
-      <div class="news-page-head">
+      <div class="news-page-head" style="--hero-image:url('images/geteilter-zaun-gorc-peak.webp')">
         <p class="kicker">GETEILTE ZÄUNE</p>
-        <h2>3 JONIEC® GORC Systeme mit Bildern und Details</h2>
-        <p>Diese eigenständige Seite öffnet sich nach dem Klick auf „Geteilte Zäune“ und zeigt die Produkte aus dem JONIEC® Bereich „Geteilte Zäune“ als übersichtliche Karten mit Foto, Beschreibung und wichtigsten Daten.</p>
+        <h2>JONIEC® GORC Systeme für moderne Grundstücke</h2>
+        <p>Eine klare Übersicht der passenden Systeme mit Foto, Beschreibung und den wichtigsten Daten für Ihre Anfrage.</p>
         <div class="news-page-actions">
-          <a class="news-back-btn" href="produkte.html#bilder">← Zurück zu den 15 Bereichen</a>
-          <a class="btn btn-primary" href="#anfrage">Projekt zu geteilten Zäunen anfragen</a>
+          <a class="news-back-btn" href="Systeme.html#bilder">← Zurück zu den 15 Bereichen</a>
+          <a class="btn btn-primary" href="#anfrage">Projekt anfragen</a>
         </div>
       </div>
       <div class="news-grid">
@@ -1477,13 +1562,10 @@
           <img src="images/geteilter-zaun-gorc-peak.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Geteilte Zäune</span>
-          <h3>Geteilter Zaun GORC® Peak</h3>
+<h3>Geteilter Zaun GORC® Peak</h3>
           <p class="news-desc">GORC® Peak verbindet den klassischen Charakter eines Schieferzauns mit großen, modernen Blockformaten. Das System wirkt markant, natürlich und eignet sich sehr gut für moderne Grundstücke.</p>
           <ul class="news-detail-list"><li>Großes Blockformat für schnelle und klare Montage</li><li>Flexible Gestaltung durch unterschiedliche Pfosten- und Wandelemente</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#2d2c2a" title="Dark" aria-label="Dark"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#8a7a5b" title="Piryt" aria-label="Piryt"></span><span class="color-dot" style="--c:#74756e" title="Wanad" aria-label="Wanad"></span><span class="color-dot" style="--c:#81766c" title="shade" aria-label="shade"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilter Zaun GORC® Peak">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1491,13 +1573,10 @@
           <img src="images/geteilte-zaeune-gorc-de-luxe-gl38.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Geteilte Zäune</span>
-          <h3>Geteilte Zäune GORC® de Luxe GL38</h3>
+<h3>Geteilte Zäune GORC® de Luxe GL38</h3>
           <p class="news-desc">GORC® de Luxe GL38 ist eine größere und repräsentative Variante des beliebten GL22 Systems. Es ermöglicht breite Gestaltungsmöglichkeiten und eine elegante Kombination von Pfosten und Fundament.</p>
           <ul class="news-detail-list"><li>Größeres Gegenstück zum System GL22</li><li>Sehr gut kombinierbar mit GL22-Elementen</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#e9e4dc" title="Alaska" aria-label="Alaska"></span><span class="color-dot" style="--c:#7a5b43" title="Bronzit" aria-label="Bronzit"></span><span class="color-dot" style="--c:#b7b7b1" title="Schwarz" aria-label="Schwarz"></span><span class="color-dot" style="--c:#b7b7b1" title="Getit" aria-label="Getit"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#d5bd95" title="Sand" aria-label="Sand"></span><span class="color-dot" style="--c:#8a7a5b" title="Pyrit" aria-label="Pyrit"></span><span class="color-dot" style="--c:#c7c7c4" title="Silver" aria-label="Silver"></span><span class="color-dot" style="--c:#9d8d75" title="Vera" aria-label="Vera"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL38">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       <article class="news-card">
@@ -1505,34 +1584,30 @@
           <img src="images/geteilte-zaeune-gorc-de-luxe-gl22.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
-          <span class="news-category">Geteilte Zäune</span>
-          <h3>Geteilte Zäune GORC® de Luxe GL22</h3>
+<h3>Geteilte Zäune GORC® de Luxe GL22</h3>
           <p class="news-desc">GORC® de Luxe GL22 ist ein klassisches JONIEC® Spaltzaunsystem mit sichtbaren vertikalen und horizontalen Fugen. Die gespaltete Oberfläche erinnert an Naturstein und verleiht Pfosten und Fundament Charakter.</p>
           <ul class="news-detail-list"><li>Zweiteilige Blöcke für Pfosten und Blöcke für Wände</li><li>Vorgefräste Kanten machen eine Fuge überflüssig</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#e9e4dc" title="Alaska" aria-label="Alaska"></span><span class="color-dot" style="--c:#7a5b43" title="Bronzyt" aria-label="Bronzyt"></span><span class="color-dot" style="--c:#111111" title="Czarny" aria-label="Czarny"></span><span class="color-dot" style="--c:#a38660" title="Getyt" aria-label="Getyt"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#d5bd95" title="Piaskowy" aria-label="Piaskowy"></span><span class="color-dot" style="--c:#8a7a5b" title="Piryt" aria-label="Piryt"></span><span class="color-dot" style="--c:#c7c7c4" title="Silver" aria-label="Silver"></span><span class="color-dot" style="--c:#9d8d75" title="Vera" aria-label="Vera"></span></span></li></ul>
-          <div class="news-card-actions">
-            <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL22">Anfrage vorbereiten</a>
-          </div>
+          
         </div>
       </article>
       </div>
-      <p class="news-source-note">Hinweis: Die Produktbilder wurden auf lokale Bildpfade umgestellt. Lokale Bildpfade befinden sich im Ordner auf <code>images/geteilte-01.webp</code> bis <code>images/geteilte-03.webp</code> ändern.</p>
-    </div>
+</div>
   </div>
 </section>
 
     <section id="anfrage">
       <div class="container">
-        <div class="contact-band"><div><p class="kicker">Anfrage</p><h2>Projekt individuell kalkulieren lassen</h2><p>Senden Sie Produkt, Menge, Länge, Höhe, Lieferort und Fotos vom Projektort. Danach kann ein Angebot vorbereitet werden.</p></div><a class="btn btn-primary" href="mailto:info@zaunmacher24.de">info@zaunmacher24.de</a></div>
+        <div class="contact-band"><div><p class="kicker">Anfrage</p><h2>JONIEC® GORC Systeme für moderne Grundstücke</h2><p>Senden Sie System, Menge, Länge, Höhe, Lieferort und Fotos vom Projektort. Danach kann ein Angebot vorbereitet werden.</p></div><a class="btn btn-primary" href="mailto:info@zaunmacher24.de">info@zaunmacher24.de</a></div>
         <form class="form-wrap" action="mailto:info@zaunmacher24.de" method="post" enctype="text/plain">
           <div class="form-grid">
             <div class="field"><label for="name">Name</label><input id="name" name="Name" required placeholder="Ihr Name"></div>
             <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" placeholder="Telefonnummer"></div>
             <div class="field"><label for="email">E-Mail</label><input id="email" name="Email" type="email" required placeholder="E-Mail-Adresse"></div>
             <div class="field"><label for="area">Lieferort</label><input id="area" name="Lieferort" placeholder="PLZ / Ort"></div>
-            <div class="field full"><label for="product">Produkt</label><input id="product" name="Produkt" placeholder="Produkt wird per Klick automatisch eingetragen"></div>
+            <div class="field full"><label for="product">Auswahl</label><input id="product" name="Auswahl" placeholder="Auswahl wird per Klick automatisch eingetragen"></div>
             <div class="field full"><label for="message">Nachricht</label><textarea id="message" name="Nachricht" placeholder="Bitte Maße, Länge, Höhe, Farbe, gewünschtes System und Lieferadresse beschreiben."></textarea></div>
           </div>
-          <button class="btn btn-primary" type="submit" style="margin-top:18px">Anfrage vorbereiten</button>
+          
         </form>
       </div>
     </section>
@@ -1552,13 +1627,12 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Start</a>
-        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="Systeme.html#bilder">Bereiche</a>
         <a href="#anfrage">Anfrage</a>
       </div>
     </div>
   </footer>
 
-  
 <script>
   const pageHeader = document.querySelector('header');
   const menu = document.getElementById('menu');
@@ -1584,7 +1658,7 @@
   document.querySelectorAll('.news-request-btn').forEach(button => {
     button.addEventListener('click', () => {
       const productInput = document.getElementById('product');
-      if (productInput) productInput.value = button.dataset.productName || 'Geteilte Zäune';
+      if (productInput) productInput.value = button.dataset.selectionName || 'Geteilte Zäune';
       if (menu) menu.classList.remove('open');
     });
   });
