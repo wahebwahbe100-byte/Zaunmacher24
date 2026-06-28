@@ -1178,7 +1178,7 @@
   color: #fff;
   background:
     linear-gradient(90deg, rgba(17,22,29,.94), rgba(17,22,29,.76)),
-    url("https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp") center / cover no-repeat;
+    url("images/geteilte-zaeune-hintergrund.webp") center / cover no-repeat;
 }
 
 .news-page-head .kicker {
@@ -1434,6 +1434,18 @@
     padding-top: 144px !important;
   }
 }
+
+
+/* Local image + matte colour swatches cleanup */
+.news-badge { display:none !important; }
+.color-list-item { display:block !important; padding-left:0 !important; }
+.color-list-item::before { display:none !important; content:none !important; }
+.color-label { display:block; color:#374151; font-size:14px; font-weight:850; margin:0 0 8px; }
+.color-swatches { display:flex; flex-wrap:wrap; gap:12px; align-items:center; padding-top:2px; }
+.color-dot { width:34px; height:34px; border-radius:50%; background:var(--c); border:1px solid rgba(21,25,34,.18); box-shadow:none; display:inline-block; }
+.color-dot[title*="weiß"], .color-dot[title*="Weiß"], .color-dot[title*="white"], .color-dot[title*="White"], .color-dot[title*="alaska"], .color-dot[title*="Snow"] { border-color:rgba(21,25,34,.24); }
+.news-image img[src$=".webp"], .product-image img[src$=".webp"] { background:#eef0f3; }
+
 </style>
 </head>
 <body>
@@ -1476,14 +1488,13 @@
       <div class="news-grid">
       <article class="news-card">
         <div class="news-image">
-          <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
-          <span class="news-badge">System 01</span>
+          <img src="images/geteilter-zaun-gorc-peak.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Geteilte Zäune</span>
           <h3>Geteilter Zaun GORC® Peak</h3>
           <p class="news-desc">GORC® Peak verbindet den klassischen Charakter eines Schieferzauns mit großen, modernen Blockformaten. Das System wirkt markant, natürlich und eignet sich sehr gut für moderne Grundstücke.</p>
-          <ul class="news-detail-list"><li>Großes Blockformat für schnelle und klare Montage</li><li>Flexible Gestaltung durch unterschiedliche Pfosten- und Wandelemente</li><li>Farben: Dark, Onyx, Piryt, Wanad, shade</li></ul>
+          <ul class="news-detail-list"><li>Großes Blockformat für schnelle und klare Montage</li><li>Flexible Gestaltung durch unterschiedliche Pfosten- und Wandelemente</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#2d2c2a" title="Dark" aria-label="Dark"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#8a7a5b" title="Piryt" aria-label="Piryt"></span><span class="color-dot" style="--c:#74756e" title="Wanad" aria-label="Wanad"></span><span class="color-dot" style="--c:#81766c" title="shade" aria-label="shade"></span></span></li></ul>
           <div class="news-card-actions">
             <a class="news-request-btn" href="#anfrage" data-product-name="Geteilter Zaun GORC® Peak">Anfrage vorbereiten</a>
           </div>
@@ -1491,14 +1502,13 @@
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="https://joniec.de/images/852/8ba7d1cc1ae37160c1d7da7fdd06d853.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
-          <span class="news-badge">System 02</span>
+          <img src="images/geteilte-zaeune-gorc-de-luxe-gl38.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Geteilte Zäune</span>
           <h3>Geteilte Zäune GORC® de Luxe GL38</h3>
           <p class="news-desc">GORC® de Luxe GL38 ist eine größere und repräsentative Variante des beliebten GL22 Systems. Es ermöglicht breite Gestaltungsmöglichkeiten und eine elegante Kombination von Pfosten und Fundament.</p>
-          <ul class="news-detail-list"><li>Größeres Gegenstück zum System GL22</li><li>Sehr gut kombinierbar mit GL22-Elementen</li><li>Farben: Alaska, Bronzit, Schwarz, Getit, Onyx, Sand, Pyrit, Silver, Vera</li></ul>
+          <ul class="news-detail-list"><li>Größeres Gegenstück zum System GL22</li><li>Sehr gut kombinierbar mit GL22-Elementen</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#e9e4dc" title="Alaska" aria-label="Alaska"></span><span class="color-dot" style="--c:#7a5b43" title="Bronzit" aria-label="Bronzit"></span><span class="color-dot" style="--c:#b7b7b1" title="Schwarz" aria-label="Schwarz"></span><span class="color-dot" style="--c:#b7b7b1" title="Getit" aria-label="Getit"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#d5bd95" title="Sand" aria-label="Sand"></span><span class="color-dot" style="--c:#8a7a5b" title="Pyrit" aria-label="Pyrit"></span><span class="color-dot" style="--c:#c7c7c4" title="Silver" aria-label="Silver"></span><span class="color-dot" style="--c:#9d8d75" title="Vera" aria-label="Vera"></span></span></li></ul>
           <div class="news-card-actions">
             <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL38">Anfrage vorbereiten</a>
           </div>
@@ -1506,21 +1516,20 @@
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="https://joniec.de/images/872/9655821af0e1747534b9636778da8c95.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
-          <span class="news-badge">System 03</span>
+          <img src="images/geteilte-zaeune-gorc-de-luxe-gl22.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Geteilte Zäune</span>
           <h3>Geteilte Zäune GORC® de Luxe GL22</h3>
           <p class="news-desc">GORC® de Luxe GL22 ist ein klassisches JONIEC® Spaltzaunsystem mit sichtbaren vertikalen und horizontalen Fugen. Die gespaltete Oberfläche erinnert an Naturstein und verleiht Pfosten und Fundament Charakter.</p>
-          <ul class="news-detail-list"><li>Zweiteilige Blöcke für Pfosten und Blöcke für Wände</li><li>Vorgefräste Kanten machen eine Fuge überflüssig</li><li>Farben: Alaska, Bronzyt, Czarny, Getyt, Onyx, Piaskowy, Piryt, Silver, Vera</li></ul>
+          <ul class="news-detail-list"><li>Zweiteilige Blöcke für Pfosten und Blöcke für Wände</li><li>Vorgefräste Kanten machen eine Fuge überflüssig</li><li class="color-list-item"><span class="color-label">Farben</span><span class="color-swatches" aria-label="Farben"><span class="color-dot" style="--c:#e9e4dc" title="Alaska" aria-label="Alaska"></span><span class="color-dot" style="--c:#7a5b43" title="Bronzyt" aria-label="Bronzyt"></span><span class="color-dot" style="--c:#111111" title="Czarny" aria-label="Czarny"></span><span class="color-dot" style="--c:#a38660" title="Getyt" aria-label="Getyt"></span><span class="color-dot" style="--c:#1f2324" title="Onyx" aria-label="Onyx"></span><span class="color-dot" style="--c:#d5bd95" title="Piaskowy" aria-label="Piaskowy"></span><span class="color-dot" style="--c:#8a7a5b" title="Piryt" aria-label="Piryt"></span><span class="color-dot" style="--c:#c7c7c4" title="Silver" aria-label="Silver"></span><span class="color-dot" style="--c:#9d8d75" title="Vera" aria-label="Vera"></span></span></li></ul>
           <div class="news-card-actions">
             <a class="news-request-btn" href="#anfrage" data-product-name="Geteilte Zäune GORC® de Luxe GL22">Anfrage vorbereiten</a>
           </div>
         </div>
       </article>
       </div>
-      <p class="news-source-note">Hinweis: Die Produktbilder sind als externe JONIEC®-Bildlinks eingebunden. Wenn Sie eigene lokale Bilder nutzen möchten, können Sie die Bildpfade später z. B. auf <code>images/geteilte-01.webp</code> bis <code>images/geteilte-03.webp</code> ändern.</p>
+      <p class="news-source-note">Hinweis: Die Produktbilder wurden auf lokale Bildpfade umgestellt. Lokale Bildpfade befinden sich im Ordner auf <code>images/geteilte-01.webp</code> bis <code>images/geteilte-03.webp</code> ändern.</p>
     </div>
   </div>
 </section>
