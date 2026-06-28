@@ -1271,6 +1271,52 @@
       .hero-kaiser .hero-arrow { width: 46px; height: 46px; }
     }
 
+
+    /* ============================================================
+       TRANSPARENT HERO + IMAGE LOADER FIX
+       - No dark/solid fallback background.
+       - If hero image exists/loads, it fades in.
+       - If image is missing, the hero remains transparent.
+       ============================================================ */
+    .hero-kaiser,
+    .hero-kaiser .hero-slider,
+    .hero-kaiser .hero-slide {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+    .hero-kaiser .hero-slide.slide-1,
+    .hero-kaiser .hero-slide.slide-2,
+    .hero-kaiser .hero-slide.slide-3 {
+      background-image: none !important;
+    }
+    .hero-kaiser .hero-bg {
+      background-color: transparent !important;
+      opacity: 0;
+      transition: opacity .7s ease, transform 6.2s ease-out;
+    }
+    .hero-kaiser .hero-slide.has-image .hero-bg {
+      opacity: 1;
+    }
+    .hero-kaiser .hero-slide::before,
+    .hero-kaiser .hero-slide::after,
+    .hero-kaiser .hero-slider::after {
+      opacity: 0;
+      transition: opacity .55s ease;
+    }
+    .hero-kaiser .hero-slide.has-image::before {
+      opacity: 1;
+    }
+    .hero-kaiser .hero-slide.has-image::after {
+      opacity: .5;
+    }
+    .hero-kaiser.has-loaded-images .hero-slider::after {
+      opacity: 1;
+    }
+    .hero-kaiser .hero-copy {
+      position: relative;
+      z-index: 6;
+    }
+
   </style>
 </head>
 <body>
@@ -1765,6 +1811,43 @@
     heroNext.addEventListener('click', () => { showHeroSlide(heroIndex + 1); resetHeroTimer(); });
     showHeroSlide(0);
     resetHeroTimer();
+
+    function initHeroTransparentImageLoader() {
+      const hero = document.querySelector('.hero-kaiser');
+      if (!hero) return;
+
+      const backgrounds = hero.querySelectorAll('.hero-bg');
+      backgrounds.forEach((bg) => {
+        const slide = bg.closest('.hero-slide');
+        const cssBackground = window.getComputedStyle(bg).backgroundImage;
+        const match = cssBackground && cssBackground.match(/url\(["']?(.*?)["']?\)/);
+
+        if (!match || !match[1]) {
+          if (slide) slide.classList.remove('has-image');
+          return;
+        }
+
+        const imageUrl = match[1];
+        const tester = new Image();
+
+        tester.onload = () => {
+          bg.classList.add('is-loaded');
+          if (slide) slide.classList.add('has-image');
+          hero.classList.add('has-loaded-images');
+        };
+
+        tester.onerror = () => {
+          bg.style.backgroundImage = 'none';
+          bg.classList.remove('is-loaded');
+          if (slide) slide.classList.remove('has-image');
+        };
+
+        tester.src = imageUrl;
+      });
+    }
+
+    initHeroTransparentImageLoader();
+
 
     let currentFilter = 'all';
     function applyFilter() {
